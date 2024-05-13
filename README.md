@@ -1,2 +1,2 @@
 # MagicTranslate
-MC3
+Macro
