@@ -1,0 +1,2 @@
+# MagicTranslate
+MC3
