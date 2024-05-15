@@ -11,7 +11,7 @@ import SwiftUI
 struct MagicTranslateApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DragDrop()
         }
     }
 }
