@@ -1,0 +1,21 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Drag & Drop or select screenshot" : {
+
+    },
+    "Drag & Drop screenshot" : {
+
+    },
+    "Example" : {
+
+    },
+    "File content: " : {
+
+    },
+    "File path: %@" : {
+
+    }
+  },
+  "version" : "1.0"
+}
