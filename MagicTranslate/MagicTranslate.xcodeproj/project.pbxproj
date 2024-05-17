@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A380E802BF73B8300B5120D /* DrawOverScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */; };
 		E751894C2BF378AC00ABD7BB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E751894B2BF378AC00ABD7BB /* Localizable.xcstrings */; };
 		E7B835352BF23B1000615BA4 /* MagicTranslateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */; };
 		E7B835372BF23B1000615BA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B835362BF23B1000615BA4 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOverScreenshot.swift; sourceTree = "<group>"; };
 		E751894B2BF378AC00ABD7BB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E751894D2BF3CADE00ABD7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E7B835312BF23B1000615BA4 /* MagicTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 				E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */,
 				E7B835362BF23B1000615BA4 /* ContentView.swift */,
 				E7B8354B2BF372DC00615BA4 /* DragDrop.swift */,
+				1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */,
 				E7B835382BF23B1200615BA4 /* Assets.xcassets */,
 				E7B8353D2BF23B1200615BA4 /* MagicTranslate.entitlements */,
 				E7B8353A2BF23B1200615BA4 /* Preview Content */,
@@ -154,6 +157,7 @@
 				E7B835372BF23B1000615BA4 /* ContentView.swift in Sources */,
 				E7B835352BF23B1000615BA4 /* MagicTranslateApp.swift in Sources */,
 				E7B8354C2BF372DC00615BA4 /* DragDrop.swift in Sources */,
+				1A380E802BF73B8300B5120D /* DrawOverScreenshot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +292,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MagicTranslate/Preview Content\"";
-				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -299,7 +303,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.perru.MagicTranslate;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.MagicTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -316,7 +320,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MagicTranslate/Preview Content\"";
-				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -327,7 +331,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.perru.MagicTranslate;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.MagicTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
