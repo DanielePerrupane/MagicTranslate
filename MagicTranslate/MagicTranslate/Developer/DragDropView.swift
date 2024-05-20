@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct DragDrop: View {
+struct DragDropView: View {
     
     @State private var droppedFilePath: String?
     @State private var fileContent: String = ""
     @State private var jsonData: [String: Any] = [:]
+    @State private var errorMessage: String?
     
     var body: some View {
         
@@ -19,8 +20,7 @@ struct DragDrop: View {
             if let droppedFilePath = droppedFilePath {
                 //After drag and drop
                 ScrollView{
-                    Text("File path: \(droppedFilePath)")
-                        .padding()
+
                     Text("File content: ")
                         .padding(.top)
                     
@@ -30,22 +30,26 @@ struct DragDrop: View {
                                 .padding()
                         }
                     }
-                    //                    Text(fileContent)
-                    //                        .padding(.horizontal)
-                }
+                }.padding(.horizontal,1)
+                
                 
             } else {
                 //Before drag and drop
-                //Text("Drag and Drop your localization file here")
                 VStack {
                     ZStack {
                         Rectangle()
                             .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
                             .frame(width: .infinity, height: .infinity)
                             .foregroundColor(.gray)
-                        Text("Drag & Drop screenshot")
+                        Text("Drag & Drop your localization file here")
                             .foregroundColor(.gray)
                     }.padding()
+                    
+                    if let errorMessage = errorMessage {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
                 }
                 .onDrop(of: ["public.file-url"], isTargeted: nil) { providers in
                     for provider in providers {
@@ -59,6 +63,7 @@ struct DragDrop: View {
                                 
                                 
                                 self.droppedFilePath = url.path
+                                self.errorMessage = nil
                                 
                                 //Read file content and parse JSON
                                 if let contentData = try? Data(contentsOf: url),
@@ -69,7 +74,10 @@ struct DragDrop: View {
                                 }
                             }
                             else {
-                                print("Invalid file format, please drop a .xcstrings file.")
+                                //Set error message
+                                DispatchQueue.main.async {
+                                    self.errorMessage = "Invalid file format, please drop a .xcstrings file."
+                                }
                             }
                         }
                     }
@@ -82,5 +90,5 @@ struct DragDrop: View {
 }
 
 #Preview {
-    DragDrop()
+    DragDropView()
 }

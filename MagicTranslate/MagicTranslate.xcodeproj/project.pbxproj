@@ -14,7 +14,7 @@
 		E7B835372BF23B1000615BA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B835362BF23B1000615BA4 /* ContentView.swift */; };
 		E7B835392BF23B1200615BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B835382BF23B1200615BA4 /* Assets.xcassets */; };
 		E7B8353C2BF23B1200615BA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B8353B2BF23B1200615BA4 /* Preview Assets.xcassets */; };
-		E7B8354C2BF372DC00615BA4 /* DragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8354B2BF372DC00615BA4 /* DragDrop.swift */; };
+		E7B8354C2BF372DC00615BA4 /* DragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8354B2BF372DC00615BA4 /* DragDropView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		E7B835382BF23B1200615BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7B8353B2BF23B1200615BA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7B8353D2BF23B1200615BA4 /* MagicTranslate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MagicTranslate.entitlements; sourceTree = "<group>"; };
-		E7B8354B2BF372DC00615BA4 /* DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDrop.swift; sourceTree = "<group>"; };
+		E7B8354B2BF372DC00615BA4 /* DragDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDropView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 		E72EA9452BF76AA600BF8D76 /* Developer */ = {
 			isa = PBXGroup;
 			children = (
-				E7B8354B2BF372DC00615BA4 /* DragDrop.swift */,
+				E7B8354B2BF372DC00615BA4 /* DragDropView.swift */,
 			);
 			path = Developer;
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 			files = (
 				E7B835372BF23B1000615BA4 /* ContentView.swift in Sources */,
 				E7B835352BF23B1000615BA4 /* MagicTranslateApp.swift in Sources */,
-				E7B8354C2BF372DC00615BA4 /* DragDrop.swift in Sources */,
+				E7B8354C2BF372DC00615BA4 /* DragDropView.swift in Sources */,
 				1A380E802BF73B8300B5120D /* DrawOverScreenshot.swift in Sources */,
 				E72EA9442BF7690200BF8D76 /* LanguagePickerView.swift in Sources */,
 			);
