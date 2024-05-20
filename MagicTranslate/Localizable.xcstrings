@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "Drag & Drop or select screenshot" : {
 
     },
@@ -14,6 +17,21 @@
 
     },
     "File path: %@" : {
+
+    },
+    "height: %lld" : {
+
+    },
+    "Select the language you want to localize to" : {
+
+    },
+    "width: %lld" : {
+
+    },
+    "x: %lld" : {
+
+    },
+    "y: %lld" : {
 
     }
   },
