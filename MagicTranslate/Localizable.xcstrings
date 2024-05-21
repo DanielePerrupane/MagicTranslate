@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "Done" : {
+
+    },
     "Drag & Drop or select screenshot" : {
 
     },
@@ -13,13 +16,28 @@
     "Drag & Drop your localization file here" : {
 
     },
+    "Drag&Drop an image here" : {
+
+    },
+    "Enter text here" : {
+
+    },
+    "Enter your project name: " : {
+
+    },
     "Example" : {
+
+    },
+    "File Content" : {
 
     },
     "File content: " : {
 
     },
     "height: %lld" : {
+
+    },
+    "Project Setup" : {
 
     },
     "Select the language you want to localize to" : {
