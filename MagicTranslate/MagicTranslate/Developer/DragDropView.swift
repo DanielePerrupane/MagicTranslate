@@ -61,7 +61,7 @@ struct DragDropView: View {
                             ZStack {
                                 Rectangle()
                                     .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
-                                    .frame(width: .infinity, height: .infinity)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     .foregroundColor(.gray)
                                 Text("Drag & Drop your localization file here")
                                     .foregroundColor(.gray)

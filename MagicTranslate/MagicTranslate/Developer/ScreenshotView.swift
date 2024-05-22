@@ -22,7 +22,7 @@ struct ScreenshotView: View {
             TextField("", text: $word)
                 .padding(.top,10)
                 .padding(.horizontal,10)
-                .frame(width: .infinity)
+                .frame(maxWidth: .infinity)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
             //2 Text Field with title
@@ -37,7 +37,7 @@ struct ScreenshotView: View {
                 TextField("Enter text here", text: $note)
                     .padding(.bottom,10)
                     .padding(.horizontal,10)
-                    .frame(width: .infinity)
+                    .frame(maxWidth: .infinity)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             
@@ -51,7 +51,7 @@ struct ScreenshotView: View {
             ZStack {
                 Rectangle()
                     .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
-                    .frame(width: .infinity, height: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(.gray)
                     .padding(10)
                     .onDrop(of: ["public.file-url"], isTargeted: nil) { providers in
