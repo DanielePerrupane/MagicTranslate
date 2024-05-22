@@ -13,8 +13,10 @@ struct ScreenshotView: View {
     @State private var arrayString: [String]?
     @State private var word = ""
     @State private var note = ""
-    @State private var selectedItem: PhotosPickerItem? = nil
-    @State private var selectedImageData: Data? = nil
+    @State private var selectedImages: [NSImage] = []
+    //@State private var selectedImageData: Data? = nil
+    //@State private var selectedItem: PhotosPickerItem? = nil
+    
     
     var body: some View {
         VStack {
@@ -57,61 +59,51 @@ struct ScreenshotView: View {
                     .onDrop(of: ["public.file-url"], isTargeted: nil) { providers in
                         handleOnDrop(providers: providers)
                     }
-                if let imageData = selectedImageData, let nsImage = NSImage(data: imageData) {
-                    Image(nsImage: nsImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity,maxHeight: .infinity)
-                        .padding(10)
-                } else {
+                if selectedImages.isEmpty {
                     Text("Drag&Drop an image here")
+                } else {
+                    ScrollView {
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 10), spacing: 10) {
+                            ForEach(selectedImages.indices, id: \.self) { index in
+                                Image(nsImage: selectedImages[index])
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100, height: 100)
+                                    .padding(5)
+                            }
+                        }
+                        .padding(10)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                
-//                PhotosPicker(selection: $selectedItem, matching: .images, photoLibrary: .shared()){
-//                    Text("Drag & Drop your screenshot")
-//                    
-//                }
-                
-//                .onChange(of: selectedItem) { newItem in
-//                    Task {
-//                        if let data = try? await newItem?.loadTransferable(type: Data.self) {
-//                            selectedImageData = data
-//                        }
-//                    }
-//                }
-//                
-//                if let imageData = selectedImageData, let nsImage = NSImage(data: imageData) {
-//                    Image(nsImage: nsImage)
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                        .padding(10)
-//                }
-                
-                
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .navigationTitle(projectName)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     private func handleOnDrop(providers:[NSItemProvider]) -> Bool {
+        var handled = false
         for provider in providers {
             if provider.hasItemConformingToTypeIdentifier("public.file-url") {
-                provider.loadItem(forTypeIdentifier: "public.file-url", options: nil) { item, error in
-                    if let data = item as? Data,
+                provider.loadItem(forTypeIdentifier: "public.file-url", options: nil) { data, error in
+                    if let data = data as? Data,
                        let url = URL(dataRepresentation: data, relativeTo: nil),
                        url.isFileURL,
-                       let imageData = try? Data(contentsOf: url) {
+                       let imageData = try? Data(contentsOf: url),
+                       let nsImage = NSImage(data: imageData) {
+                        
                         DispatchQueue.main.async {
-                            self.selectedImageData = imageData
+                            selectedImages.append(nsImage)
                         }
+                        handled = true
                     }
                 }
-                return true
+                return handled
             }
         }
-        return false
+        return handled
     }
 }
 
