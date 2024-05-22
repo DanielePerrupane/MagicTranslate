@@ -59,17 +59,35 @@ struct ScreenshotView: View {
                     .onDrop(of: ["public.file-url"], isTargeted: nil) { providers in
                         handleOnDrop(providers: providers)
                     }
+                
                 if selectedImages.isEmpty {
                     Text("Drag&Drop an image here")
                 } else {
                     ScrollView {
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 10), spacing: 10) {
                             ForEach(selectedImages.indices, id: \.self) { index in
-                                Image(nsImage: selectedImages[index])
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 100)
-                                    .padding(5)
+                                ZStack(alignment: .topTrailing) {
+                                    Image(nsImage: selectedImages[index])
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 100, height: 100)
+                                        .padding(5)
+                                    
+                                    Button(action: {
+                                        withAnimation {
+                                            if selectedImages.indices.contains(index) {
+                                                selectedImages.remove(at: index)
+                                            }
+                                        }
+                                    }) {
+                                        Image(systemName: "trash")
+                                            .foregroundColor(.red)
+                                            .background(Color.white)
+                                            .clipShape(Circle())
+                                    }
+                                    .offset(x: -10, y: -10)
+                                    
+                                }
                             }
                         }
                         .padding(10)
