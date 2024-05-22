@@ -321,11 +321,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MagicTranslate/Preview Content\"";
-				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MagicTranslate/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Magic Translate";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -350,11 +352,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MagicTranslate/Preview Content\"";
-				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MagicTranslate/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Magic Translate";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
