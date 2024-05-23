@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct LanguagePickerView: View {
-    @Binding var selectedLanguage: String
     
-    let availableLanguages = ["Italian", "English", "Uzbek", "Russian"]
+    @State var selectedLanguage = "en"
+    
+    let supportedLanguagesWithNames = getAllSupportedLanguagesWithNames()
     
     
     var body: some View {
@@ -18,21 +19,27 @@ struct LanguagePickerView: View {
             Text("Select the language you want to localize to")
                 .font(.title)
                 .bold()
-            Picker("", selection: $selectedLanguage) {
-                ForEach(availableLanguages, id: \.self) { language in
-                    Text(language).tag(language)
+            
+            Picker("Language", selection: $selectedLanguage) {
+                ForEach(supportedLanguagesWithNames, id: \.code) { language in
+                    Text(language.name).tag(language.code)
                 }
             }
-            .pickerStyle(MenuPickerStyle())
+            .pickerStyle(.menu)
             .padding()
+            
+            NavigationLink(destination: ContentView()){
+                Text("Done")
+                    .padding(3.0)
+                    .foregroundColor(.white)
+            }
+            .buttonStyle(PlainButtonStyle())
+            .background(Color.blue)
+            .cornerRadius(3.0)
         }
     }
 }
 
-struct LanguagePickerView_Previews: PreviewProvider {
-    @State static var selectedLanguage = "en"
-    
-    static var previews: some View {
-        LanguagePickerView(selectedLanguage: $selectedLanguage)
-    }
+#Preview {
+    LanguagePickerView()
 }
