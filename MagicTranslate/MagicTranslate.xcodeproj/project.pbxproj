@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A380E802BF73B8300B5120D /* DrawOverScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */; };
+		1AB98FA42BFF39B90036552D /* getSupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA32BFF39B90036552D /* getSupportedLanguages.swift */; };
+		1AB98FA62BFF3A020036552D /* PathPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA52BFF3A020036552D /* PathPickerView.swift */; };
+		1AB98FA82BFF3A7C0036552D /* PersonNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA72BFF3A7C0036552D /* PersonNameView.swift */; };
 		E72EA9442BF7690200BF8D76 /* LanguagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EA9432BF7690200BF8D76 /* LanguagePickerView.swift */; };
 		E72EA9482BFB437700BF8D76 /* ProjectNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EA9472BFB437700BF8D76 /* ProjectNameView.swift */; };
 		E72EA94A2BFC894B00BF8D76 /* ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EA9492BFC894B00BF8D76 /* ScreenshotView.swift */; };
@@ -20,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOverScreenshot.swift; sourceTree = "<group>"; };
+		1AB98FA32BFF39B90036552D /* getSupportedLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSupportedLanguages.swift; sourceTree = "<group>"; };
+		1AB98FA52BFF3A020036552D /* PathPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPickerView.swift; sourceTree = "<group>"; };
+		1AB98FA72BFF3A7C0036552D /* PersonNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameView.swift; sourceTree = "<group>"; };
 		E72EA9432BF7690200BF8D76 /* LanguagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagePickerView.swift; sourceTree = "<group>"; };
 		E72EA9472BFB437700BF8D76 /* ProjectNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectNameView.swift; sourceTree = "<group>"; };
 		E72EA9492BFC894B00BF8D76 /* ScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotView.swift; sourceTree = "<group>"; };
@@ -44,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AB98FA22BFF39A50036552D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AB98FA32BFF39B90036552D /* getSupportedLanguages.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
 		E72EA9452BF76AA600BF8D76 /* Developer */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				E72EA9432BF7690200BF8D76 /* LanguagePickerView.swift */,
+				1AB98FA72BFF3A7C0036552D /* PersonNameView.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -82,11 +97,13 @@
 		E7B835332BF23B1000615BA4 /* MagicTranslate */ = {
 			isa = PBXGroup;
 			children = (
+				1AB98FA22BFF39A50036552D /* Support Files */,
 				E72EA9462BF76AAE00BF8D76 /* Translator */,
 				E72EA9452BF76AA600BF8D76 /* Developer */,
 				E751894D2BF3CADE00ABD7BB /* Info.plist */,
 				E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */,
 				E7B835362BF23B1000615BA4 /* ContentView.swift */,
+				1AB98FA52BFF3A020036552D /* PathPickerView.swift */,
 				1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */,
 				E7B835382BF23B1200615BA4 /* Assets.xcassets */,
 				E7B8353D2BF23B1200615BA4 /* MagicTranslate.entitlements */,
@@ -169,7 +186,10 @@
 			files = (
 				E7B835372BF23B1000615BA4 /* ContentView.swift in Sources */,
 				E7B835352BF23B1000615BA4 /* MagicTranslateApp.swift in Sources */,
+				1AB98FA82BFF3A7C0036552D /* PersonNameView.swift in Sources */,
 				E7B8354C2BF372DC00615BA4 /* DragDropView.swift in Sources */,
+				1AB98FA62BFF3A020036552D /* PathPickerView.swift in Sources */,
+				1AB98FA42BFF39B90036552D /* getSupportedLanguages.swift in Sources */,
 				1A380E802BF73B8300B5120D /* DrawOverScreenshot.swift in Sources */,
 				E72EA94A2BFC894B00BF8D76 /* ScreenshotView.swift in Sources */,
 				E72EA9442BF7690200BF8D76 /* LanguagePickerView.swift in Sources */,

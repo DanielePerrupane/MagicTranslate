@@ -25,6 +25,9 @@
     "Enter text here" : {
 
     },
+    "Enter your name: " : {
+
+    },
     "Enter your project name: " : {
 
     },
@@ -40,10 +43,22 @@
     "height: %lld" : {
 
     },
+    "Language" : {
+
+    },
     "Project Setup" : {
 
     },
     "Select the language you want to localize to" : {
+
+    },
+    "Select your role" : {
+
+    },
+    "Setup" : {
+
+    },
+    "Translator" : {
 
     },
     "width: %lld" : {
