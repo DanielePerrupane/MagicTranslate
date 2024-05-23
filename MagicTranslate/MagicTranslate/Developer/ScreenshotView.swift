@@ -61,7 +61,13 @@ struct ScreenshotView: View {
                     }
                 
                 if selectedImages.isEmpty {
-                    Text("Drag&Drop an image here")
+                    VStack{
+                        Text("+")
+                            .font(.largeTitle)
+                            .fontWeight(.light)
+                        Text("Drag&Drop an image here")
+                    }
+                    
                 } else {
                     ScrollView {
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 10), spacing: 10) {

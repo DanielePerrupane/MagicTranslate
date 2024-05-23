@@ -10,7 +10,49 @@ import SwiftUI
 struct LanguagePickerView: View {
     @Binding var selectedLanguage: String
     
-    let availableLanguages = ["Italian", "English", "Uzbek", "Russian"]
+    let availableLanguages = [
+        "Arabic",
+        "Bengali",
+        "Bhojpuri",
+        "Burmese",
+        "Cantonese (Yue Chinese)",
+        "Dutch",
+        "Egyptian Arabic",
+        "English",
+        "French",
+        "German",
+        "Gujarati",
+        "Hausa",
+        "Hindi",
+        "Iranian Persian",
+        "Italian",
+        "Japanese",
+        "Javanese",
+        "Kannada",
+        "Korean",
+        "Malayalam",
+        "Mandarin Chinese",
+        "Marathi",
+        "Odia (Oriya)",
+        "Polish",
+        "Portuguese",
+        "Punjabi (Western)",
+        "Russian",
+        "Serbo-Croatian",
+        "Southern Min",
+        "Spanish",
+        "Sundanese",
+        "Tamil",
+        "Telugu",
+        "Thai",
+        "Turkish",
+        "Ukrainian",
+        "Urdu",
+        "Uzbek",
+        "Vietnamese",
+        "Wu Chinese"
+    ]
+
     
     
     var body: some View {
