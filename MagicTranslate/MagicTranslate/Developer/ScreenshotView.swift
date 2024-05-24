@@ -105,6 +105,18 @@ struct ScreenshotView: View {
         }
         .navigationTitle(projectName)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .toolbar {
+            ToolbarItem {
+                NavigationLink(destination: ContentView(selectedImages: selectedImages)) {
+                    Text("Done")
+                        .padding(3.0)
+                        .foregroundColor(.white)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .background(Color.blue)
+                .cornerRadius(3.0)
+            }
+        }
     }
     
     private func handleOnDrop(providers:[NSItemProvider]) -> Bool {

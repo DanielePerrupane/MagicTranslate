@@ -10,6 +10,7 @@ import SwiftUI
 struct LanguagePickerView: View {
     
     @State var selectedLanguage = "en"
+    @State private var selectedImages: [NSImage] = []
     
     let supportedLanguagesWithNames = getAllSupportedLanguagesWithNames()
     
@@ -28,7 +29,7 @@ struct LanguagePickerView: View {
             .pickerStyle(.menu)
             .padding()
             
-            NavigationLink(destination: ContentView()){
+            NavigationLink(destination: ContentView(selectedImages: selectedImages)){
                 Text("Done")
                     .padding(3.0)
                     .foregroundColor(.white)
