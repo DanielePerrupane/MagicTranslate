@@ -11,9 +11,10 @@ struct DrawOverScreenshot: View {
     
     @State private var startLocation = CGPoint.zero
     @State private var currentLocation = CGPoint.zero
+    var previewImage: NSImage
     
     var body: some View {
-        PreviewImage()
+        PreviewImage(previewImage: previewImage)
             .overlay{
                 Color.black
                     .opacity(0.4)
@@ -26,18 +27,22 @@ struct DrawOverScreenshot: View {
                         height: abs(currentLocation.y - startLocation.y)
                     )
                     
-                    PreviewImage()
+                    PreviewImage(previewImage: previewImage)
                         .mask{
                             RoundedRectangle(cornerRadius: 5)
                                 .frame(width: rect.width, height: rect.height)
                                 .position(x: rect.midX, y: rect.midY)
                         }
                         .overlay{
-                            SelectionBoxDebugInfo(debugEnabled: true, rect: rect)
+                            SelectionBoxDebugInfo(debugEnabled: false, rect: rect)
                         }
                 }
             }
             .gesture(dragGesture())
+            .onChange(of: previewImage){
+                startLocation = CGPoint.zero
+                currentLocation = CGPoint.zero
+            }
     }
     
     private func dragGesture() -> some Gesture {
@@ -50,8 +55,10 @@ struct DrawOverScreenshot: View {
 }
 
 struct PreviewImage: View {
+    var previewImage: NSImage
+    
     var body: some View {
-        Image(.appPlaceholder)
+        Image(nsImage: previewImage)
             .resizable()
             .aspectRatio(contentMode: .fit)
     }
@@ -79,5 +86,5 @@ struct SelectionBoxDebugInfo: View {
 }
 
 #Preview {
-    DrawOverScreenshot()
+    DrawOverScreenshot(previewImage: NSImage(resource: .appPlaceholder))
 }

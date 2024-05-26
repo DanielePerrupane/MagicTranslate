@@ -24,17 +24,15 @@ struct ContentView: View {
                 
                 //OK
                 ZStack {
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: 10)
                         .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
                         .frame(width: 450, height: 750)
                         .foregroundColor(.gray)
                     
                     if !selectedImages.isEmpty {
-                        Image(nsImage: selectedImages[currentIndex])
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 450, height: 750)
-                            .padding(10)
+                        
+                        DrawOverScreenshot(previewImage: selectedImages[currentIndex])
+                        
                     } else {
                         Text("Drag & Drop screenshot")
                             .foregroundColor(.gray)
@@ -43,15 +41,14 @@ struct ContentView: View {
                 //OK
                 VStack{
                     //1
-                    Rectangle()
-                        .fill(Color("Color1"))
-                        .cornerRadius(10.0)
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(.color1)
                         .frame(height: 100)
+                    
                     //2
                     ZStack {
-                        Rectangle()
-                            .fill(Color("Color1"))
-                            .cornerRadius(10.0)
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.color1)
                             .frame(height: 200)
                             .overlay(alignment: .bottom) {
                                 
@@ -62,10 +59,9 @@ struct ContentView: View {
                                         .font(.title)
                                         .padding(.trailing)
                                     
-                                    Rectangle()
-                                        .fill(Color("Color2"))
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(.color2)
                                         .frame(height: 100)
-                                        .cornerRadius(10.0)
                                         .padding(.bottom,10.0)
                                         .padding(.horizontal,10.0)
                                     
@@ -74,7 +70,7 @@ struct ContentView: View {
                     }
                     //3
                     
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: 10)
                         .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
                         .foregroundColor(.gray)
                         .frame(height: 435)
@@ -106,7 +102,6 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "arrow.left")
                         .padding()
-                        //.background(Color.blue)
                         .foregroundColor(.gray)
                 }
                 .disabled(currentIndex == 0)
