@@ -10,18 +10,14 @@ import Cocoa
 
 struct ContentView: View {
     
-    var selectedImages: [NSImage]
+    @State var selectedImages: [NSImage] = []
     @State private var currentIndex: Int = 0
     
     
     
     var body: some View {
         VStack {
-            
-            
             HStack {
-                
-                
                 //OK
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
@@ -83,22 +79,23 @@ struct ContentView: View {
             }
             .padding(10)
             
-            
+            //ProgressView and Buttons for navigation
             HStack{
                 
-                ProgressView(value: Double(currentIndex + 1), total: Double(selectedImages.count))
-                    .frame(width: 450)
-                    .foregroundColor(.gray)
+                //progress %
+                Text("10")
+                    .padding(.leading,10)
+                
+                CustomProgressViewStyle(progress: Double(currentIndex + 1), total: Double(selectedImages.count))
                     .padding(10)
                 
                 Spacer()
                 
-                //Arrow Buttons for navigation
+                //L
                 Button(action: {
                     if currentIndex > 0 {
                         currentIndex -= 1
                     }
-                
                 }) {
                     Image(systemName: "arrow.left")
                         .padding()
@@ -107,6 +104,7 @@ struct ContentView: View {
                 .disabled(currentIndex == 0)
                 .padding(10)
                 
+                //R
                 Button(action: {
                     if currentIndex < selectedImages.count - 1 {
                         currentIndex += 1
@@ -120,13 +118,40 @@ struct ContentView: View {
                 
             }
             .padding(.trailing,10)
-            
-            
         }
+    }
+}
+
+struct CustomProgressViewStyle: View {
+    
+    let progress: Double
+    let total: Double
+    
+    let progressBackgroundColor = Color("progressBackgroundColor")
+    let progressForegroundColor = Color("progressForegroundColor")
+    
+    
+    
+    var body: some View {
+        
+        
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                    //Background
+                    RoundedRectangle(cornerRadius: 10.0)
+                        .fill(progressBackgroundColor)
+                        .frame(maxWidth: .infinity)
+                        
+                    
+                    //Foreground (progress)
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(progressForegroundColor)
+                        .frame(width: (progress/total) * geometry.size.width)
+            }
+        }.frame(height: 10)
+        
         
     }
-    
-    
     
 }
 
