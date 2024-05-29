@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1CADF72C071E390043665A /* LocalizationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CADF62C071E390043665A /* LocalizationData.swift */; };
+		1A1CADF92C07224A0043665A /* PathControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CADF82C07224A0043665A /* PathControllerView.swift */; };
+		1A1CADFB2C072DB30043665A /* CustomProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CADFA2C072DB30043665A /* CustomProgressViewStyle.swift */; };
+		1A1CADFD2C072DDE0043665A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CADFC2C072DDE0043665A /* ProgressView.swift */; };
+		1A1CAE002C07311E0043665A /* ShareFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CADFF2C07311E0043665A /* ShareFileView.swift */; };
 		1A380E802BF73B8300B5120D /* DrawOverScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */; };
 		1AB98FA42BFF39B90036552D /* getSupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA32BFF39B90036552D /* getSupportedLanguages.swift */; };
 		1AB98FA62BFF3A020036552D /* PathPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA52BFF3A020036552D /* PathPickerView.swift */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A1CADF62C071E390043665A /* LocalizationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationData.swift; sourceTree = "<group>"; };
+		1A1CADF82C07224A0043665A /* PathControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathControllerView.swift; sourceTree = "<group>"; };
+		1A1CADFA2C072DB30043665A /* CustomProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressViewStyle.swift; sourceTree = "<group>"; };
+		1A1CADFC2C072DDE0043665A /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		1A1CADFF2C07311E0043665A /* ShareFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareFileView.swift; sourceTree = "<group>"; };
 		1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOverScreenshot.swift; sourceTree = "<group>"; };
 		1AB98FA32BFF39B90036552D /* getSupportedLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSupportedLanguages.swift; sourceTree = "<group>"; };
 		1AB98FA52BFF3A020036552D /* PathPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPickerView.swift; sourceTree = "<group>"; };
@@ -50,9 +60,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1CADFE2C072E5F0043665A /* Progress Bar */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CADFA2C072DB30043665A /* CustomProgressViewStyle.swift */,
+				1A1CADFC2C072DDE0043665A /* ProgressView.swift */,
+			);
+			path = "Progress Bar";
+			sourceTree = "<group>";
+		};
 		1AB98FA22BFF39A50036552D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A1CADF62C071E390043665A /* LocalizationData.swift */,
 				1AB98FA32BFF39B90036552D /* getSupportedLanguages.swift */,
 			);
 			path = "Support Files";
@@ -81,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				E751894B2BF378AC00ABD7BB /* Localizable.xcstrings */,
+				E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */,
 				E7B835332BF23B1000615BA4 /* MagicTranslate */,
 				E7B835322BF23B1000615BA4 /* Products */,
 			);
@@ -97,16 +118,18 @@
 		E7B835332BF23B1000615BA4 /* MagicTranslate */ = {
 			isa = PBXGroup;
 			children = (
+				1A1CADFE2C072E5F0043665A /* Progress Bar */,
 				1AB98FA22BFF39A50036552D /* Support Files */,
 				E72EA9462BF76AAE00BF8D76 /* Translator */,
 				E72EA9452BF76AA600BF8D76 /* Developer */,
 				E751894D2BF3CADE00ABD7BB /* Info.plist */,
-				E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */,
 				E7B835362BF23B1000615BA4 /* ContentView.swift */,
 				1AB98FA52BFF3A020036552D /* PathPickerView.swift */,
 				1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */,
 				E7B835382BF23B1200615BA4 /* Assets.xcassets */,
 				E7B8353D2BF23B1200615BA4 /* MagicTranslate.entitlements */,
+				1A1CADF82C07224A0043665A /* PathControllerView.swift */,
+				1A1CADFF2C07311E0043665A /* ShareFileView.swift */,
 			);
 			path = MagicTranslate;
 			sourceTree = "<group>";
@@ -185,15 +208,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7B835372BF23B1000615BA4 /* ContentView.swift in Sources */,
+				1A1CADF72C071E390043665A /* LocalizationData.swift in Sources */,
 				E7B835352BF23B1000615BA4 /* MagicTranslateApp.swift in Sources */,
 				1AB98FA82BFF3A7C0036552D /* PersonNameView.swift in Sources */,
 				E7B8354C2BF372DC00615BA4 /* DragDropView.swift in Sources */,
 				1AB98FA62BFF3A020036552D /* PathPickerView.swift in Sources */,
 				1AB98FA42BFF39B90036552D /* getSupportedLanguages.swift in Sources */,
 				1A380E802BF73B8300B5120D /* DrawOverScreenshot.swift in Sources */,
+				1A1CADFB2C072DB30043665A /* CustomProgressViewStyle.swift in Sources */,
 				E72EA94A2BFC894B00BF8D76 /* ScreenshotView.swift in Sources */,
 				E72EA9442BF7690200BF8D76 /* LanguagePickerView.swift in Sources */,
+				1A1CADFD2C072DDE0043665A /* ProgressView.swift in Sources */,
+				1A1CAE002C07311E0043665A /* ShareFileView.swift in Sources */,
 				E72EA9482BFB437700BF8D76 /* ProjectNameView.swift in Sources */,
+				1A1CADF92C07224A0043665A /* PathControllerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +361,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -364,7 +392,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

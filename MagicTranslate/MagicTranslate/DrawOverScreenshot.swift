@@ -38,6 +38,7 @@ struct DrawOverScreenshot: View {
                         }
                 }
             }
+            .clipShape(.rect(cornerRadius: 10))
             .gesture(dragGesture())
             .onChange(of: previewImage){
                 startLocation = CGPoint.zero

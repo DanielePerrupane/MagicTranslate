@@ -11,12 +11,13 @@ struct DragDropView: View {
     
     @State private var droppedFilePath: String?
     @State private var fileContent: String = ""
-    @State private var jsonData: [String: Any] = [:]
     @State private var errorMessage: String?
     @State private var navigateToNextView = false
     
     @State private var stringsCount: Int = 0
    
+    @Environment(LocalizationData.self)
+    private var localizationData: LocalizationData
     
     var body: some View {
         
@@ -29,16 +30,9 @@ struct DragDropView: View {
                         VStack{
                             
                             
-                            if let strings = jsonData["strings"] as? [String: Any] {
-                                Text("You have \(strings.count) strings: ")
-                                    .padding(.top)
-                                    .onAppear {
-                                        self.stringsCount = strings.count
-                                    }
-                                ForEach(strings.keys.sorted(), id: \.self) { key in
-                                    Text(key)
-                                        .padding()
-                                }
+                            ForEach(localizationData.extractedString, id: \.self) { key in
+                                Text(key)
+                                    .padding()
                             }
                         }
                         .frame(maxWidth: .infinity)
@@ -96,10 +90,12 @@ struct DragDropView: View {
                                         //Read file content and parse JSON
                                         if let contentData = try? Data(contentsOf: url),
                                            let json = try? JSONSerialization.jsonObject(with: contentData, options: []) as? [String: Any] {
-                                            
-                                            self.jsonData = json
-                                            
+
+                                            if let strings = json["strings"] as? [String: Any] {
+                                                localizationData.extractedString = Array(strings.keys)
+                                            }
                                         }
+
                                     }
                                     else {
                                         //Set error message
