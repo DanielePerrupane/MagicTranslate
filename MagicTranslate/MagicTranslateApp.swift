@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MagicTranslateApp: App {
+    
+    @State var localizationData: LocalizationData = LocalizationData()
+    
     var body: some Scene {
         WindowGroup {
             PathPickerView()
+                .environment(localizationData)
         }
     }
 }

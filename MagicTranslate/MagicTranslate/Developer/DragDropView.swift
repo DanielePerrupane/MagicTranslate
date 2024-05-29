@@ -11,10 +11,11 @@ struct DragDropView: View {
     
     @State private var droppedFilePath: String?
     @State private var fileContent: String = ""
-    @State private var jsonData: [String: Any] = [:]
     @State private var errorMessage: String?
     @State private var navigateToNextView = false
-   
+    
+    @Environment(LocalizationData.self)
+    private var localizationData: LocalizationData
     
     var body: some View {
         
@@ -28,11 +29,9 @@ struct DragDropView: View {
                             Text("File content: ")
                                 .padding(.top)
                             
-                            if let strings = jsonData["strings"] as? [String: Any] {
-                                ForEach(strings.keys.sorted(), id: \.self) { key in
-                                    Text(key)
-                                        .padding()
-                                }
+                            ForEach(localizationData.extractedString, id: \.self) { key in
+                                Text(key)
+                                    .padding()
                             }
                         }
                         .frame(maxWidth: .infinity)
@@ -90,10 +89,12 @@ struct DragDropView: View {
                                         //Read file content and parse JSON
                                         if let contentData = try? Data(contentsOf: url),
                                            let json = try? JSONSerialization.jsonObject(with: contentData, options: []) as? [String: Any] {
-                                            
-                                            self.jsonData = json
-                                            
+
+                                            if let strings = json["strings"] as? [String: Any] {
+                                                localizationData.extractedString = Array(strings.keys)
+                                            }
                                         }
+
                                     }
                                     else {
                                         //Set error message
