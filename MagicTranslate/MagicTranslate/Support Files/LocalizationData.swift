@@ -10,4 +10,5 @@ import SwiftUI
 @Observable
 class LocalizationData {
     var extractedString: [String] = []
+    var projectName: String = "Project Name"
 }

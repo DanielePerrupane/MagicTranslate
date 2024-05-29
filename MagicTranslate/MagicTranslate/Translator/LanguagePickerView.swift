@@ -29,11 +29,11 @@ struct LanguagePickerView: View {
             .pickerStyle(.menu)
             .padding()
             
-            NavigationLink(destination: ContentView(selectedImages: selectedImages)){
+//            NavigationLink(destination: ContentView(selectedImages: selectedImages)){
                 Text("Done")
                     .padding(3.0)
                     .foregroundColor(.white)
-            }
+//            }
             .buttonStyle(PlainButtonStyle())
             .background(Color.blue)
             .cornerRadius(3.0)

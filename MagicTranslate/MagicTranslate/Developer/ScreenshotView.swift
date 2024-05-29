@@ -9,105 +9,131 @@ import SwiftUI
 import PhotosUI
 
 struct ScreenshotView: View {
-    var projectName: String
+
     @State private var arrayString: [String]?
-    @State private var word = ""
+    var word: String
     @State private var note = ""
     @State private var selectedImages: [NSImage] = []
-    //@State private var selectedImageData: Data? = nil
-    //@State private var selectedItem: PhotosPickerItem? = nil
+    @State private var selectedImage: NSImage?
     
+    @Environment(LocalizationData.self)
+    private var localizationData: LocalizationData
     
     var body: some View {
-        VStack {
-            //1 TextField
-            TextField("", text: $word)
-                .padding(.top,10)
-                .padding(.horizontal,10)
-                .frame(maxWidth: .infinity)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+        
+        HStack{
             
-            //2 Text Field with title
-            VStack(alignment: .leading) {
-                
-                Text("Tranlsator's Notes".uppercased())
-                    .foregroundColor(.white)
-                    .font(.title3)
+            if let selectedImage{
+                DrawOverScreenshot(previewImage: selectedImage)
+            }
+            
+            VStack {
+                Text(word)
                     .padding(.top,10)
                     .padding(.horizontal,10)
-                
-                TextField("Enter text here", text: $note)
-                    .padding(.bottom,10)
-                    .padding(.horizontal,10)
-                    .frame(maxWidth: .infinity)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            .background(
-                RoundedRectangle(cornerRadius: 3.0)
-                    .fill(Color(red: 0.31, green: 0.31, blue: 0.31)))
-            .padding(10)
-            
-            
-            //3 Rectangle Image Picker
-            ZStack {
-                Rectangle()
-                    .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .foregroundColor(.gray)
-                    .padding(10)
-                    .onDrop(of: ["public.file-url"], isTargeted: nil) { providers in
-                        handleOnDrop(providers: providers)
+                    // Resetter
+                    .onChange(of: word){
+                        note = ""
+                        selectedImage = nil
                     }
                 
-                if selectedImages.isEmpty {
-                    VStack{
-                        Text("+")
-                            .font(.largeTitle)
-                            .fontWeight(.light)
-                        Text("Drag&Drop an image here")
-                    }
+                //2 Text Field with title
+                VStack(alignment: .leading) {
                     
-                } else {
-                    ScrollView {
-                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 10), spacing: 10) {
-                            ForEach(selectedImages.indices, id: \.self) { index in
-                                ZStack(alignment: .topTrailing) {
-                                    Image(nsImage: selectedImages[index])
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 100, height: 100)
-                                        .padding(5)
-                                    
-                                    Button(action: {
-                                        withAnimation {
-                                            if selectedImages.indices.contains(index) {
-                                                selectedImages.remove(at: index)
+                    Text("Tranlsator's Notes".uppercased())
+                        .foregroundColor(.white)
+                        .font(.title3)
+                        .padding(.top,10)
+                        .padding(.horizontal,10)
+                    
+                    TextField("Enter text here", text: $note)
+                        .padding(.bottom,10)
+                        .padding(.horizontal,10)
+                        .frame(maxWidth: .infinity)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(red: 0.31, green: 0.31, blue: 0.31)))
+                .padding(10)
+                
+                
+                //3 Rectangle Image Picker
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .foregroundColor(.gray)
+                        .padding(10)
+                        .onDrop(of: ["public.file-url"], isTargeted: nil) { providers in
+                            handleOnDrop(providers: providers)
+                        }
+                    
+                    if selectedImages.isEmpty {
+                        VStack{
+                            Text("+")
+                                .font(.largeTitle)
+                                .fontWeight(.light)
+                            Text("Drag&Drop an image here")
+                        }
+                        
+                    } else {
+                        ScrollView {
+                            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 10), spacing: 10) {
+                                ForEach(selectedImages.indices, id: \.self) { index in
+                                    ZStack(alignment: .topTrailing) {
+                                        Image(nsImage: selectedImages[index])
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 100, height: 100)
+                                            .padding(5)
+                                        
+                                        
+                                        VStack{
+                                            // Add
+                                            Button(action: {
+                                                withAnimation {
+                                                    selectedImage = selectedImages[index]
+                                                }
+                                            }) {
+                                                Image(systemName: "plus.circle.dashed")
+                                                    .background(Color.white)
+                                                    .clipShape(Circle())
+                                            }
+                                            
+                                            // Delete
+                                            Button(action: {
+                                                withAnimation {
+                                                    if selectedImages.indices.contains(index) {
+                                                        selectedImages.remove(at: index)
+                                                    }
+                                                }
+                                            }) {
+                                                Image(systemName: "trash")
+                                                    .foregroundColor(.red)
+                                                    .background(Color.white)
+                                                    .clipShape(Circle())
                                             }
                                         }
-                                    }) {
-                                        Image(systemName: "trash")
-                                            .foregroundColor(.red)
-                                            .background(Color.white)
-                                            .clipShape(Circle())
+
+                                        
                                     }
-                                    .offset(x: -10, y: -10)
-                                    
                                 }
                             }
+                            .padding(10)
                         }
-                        .padding(10)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .navigationTitle(projectName)
+        .navigationTitle(localizationData.projectName)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .toolbar {
             ToolbarItem {
-                NavigationLink(destination: ContentView(selectedImages: selectedImages)) {
+                NavigationLink(destination: ShareFileView()) {
                     Text("Done")
                         .padding(3.0)
                         .foregroundColor(.white)
@@ -144,5 +170,5 @@ struct ScreenshotView: View {
 }
 
 #Preview {
-    ScreenshotView(projectName: "Example ProjectName")
+    ScreenshotView(word: "Test")
 }

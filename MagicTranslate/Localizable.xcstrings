@@ -1,13 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     "+" : {
-
-    },
-    "10" : {
 
     },
     "Developer" : {
@@ -62,6 +56,12 @@
 
     },
     "Setup" : {
+
+    },
+    "Share" : {
+
+    },
+    "Share file with translator" : {
 
     },
     "Translator" : {
