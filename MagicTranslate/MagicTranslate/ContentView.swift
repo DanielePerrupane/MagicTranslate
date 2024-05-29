@@ -119,7 +119,6 @@ struct ContentView: View {
                     .foregroundColor(percentageForegroundColor)
                 
                 CustomProgressViewStyle(
-                    stringsCount: stringsCount,
                     progress: Double(currentIndex + 1),
                     total: Double(selectedImages.count))
                     .padding(10)
@@ -157,41 +156,7 @@ struct ContentView: View {
     }
 }
 
-struct CustomProgressViewStyle: View {
-    
-    var stringsCount: Int
-    let progress: Double
-    let total: Double
-    
-    
-    
-    let progressBackgroundColor = Color("progressBackgroundColor")
-    let progressForegroundColor = Color("progressForegroundColor")
-    
-    
-    
-    var body: some View {
-        
-        
-        GeometryReader { geometry in
-            ZStack(alignment: .leading) {
-                    //Background
-                    RoundedRectangle(cornerRadius: 10.0)
-                        .fill(progressBackgroundColor)
-                        .frame(maxWidth: .infinity)
-                        
-                    
-                    //Foreground (progress)
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(progressForegroundColor)
-                        .frame(width: (progress/Double(stringsCount)) * geometry.size.width)
-            }
-        }.frame(height: 10)
-        
-        
-    }
-    
-}
+
 
 
 #Preview {
