@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "%lld%%" : {
+
+    },
     "+" : {
 
     },
@@ -11,9 +14,6 @@
 
     },
     "Done" : {
-
-    },
-    "Drag & Drop or select screenshot" : {
 
     },
     "Drag & Drop screenshot" : {
@@ -38,9 +38,6 @@
 
     },
     "File Content" : {
-
-    },
-    "File content: " : {
 
     },
     "height: %lld" : {
@@ -71,6 +68,9 @@
 
     },
     "y: %lld" : {
+
+    },
+    "You have %lld strings: " : {
 
     }
   },

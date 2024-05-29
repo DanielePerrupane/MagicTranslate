@@ -13,7 +13,7 @@ struct ContentView: View {
     @State var selectedImages: [NSImage] = []
     @State private var currentIndex: Int = 0
     
-    
+    var stringsCount: Int
     
     var body: some View {
         VStack {
@@ -64,29 +64,64 @@ struct ContentView: View {
                                 }.frame(height: 180)
                             }
                     }
-                    //3
+                    //3 - bottom right
                     
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
                         .foregroundColor(.gray)
                         .frame(height: 435)
                         .overlay(
-                            Text("Drag & Drop or select screenshot")
-                                .foregroundColor(.gray)
+                            //Show array of screenshot
+                            ScrollView {
+                                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 10), spacing: 10) {
+                                    ForEach(selectedImages.indices, id: \.self) { index in
+                                        ZStack(alignment: .topTrailing) {
+                                            Image(nsImage: selectedImages[index])
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 100, height: 100)
+                                                .padding(5)
+                                            
+                                            Button(action: {
+                                                withAnimation {
+                                                    if selectedImages.indices.contains(index) {
+                                                        selectedImages.remove(at: index)
+                                                    }
+                                                }
+                                            }) {
+                                                Image(systemName: "trash")
+                                                    .foregroundColor(.red)
+                                                    .background(Color.white)
+                                                    .clipShape(Circle())
+                                            }
+                                            .offset(x: -10, y: -10)
+                                            
+                                        }
+                                    }
+                                }
+                                .padding(10)
+                            }
+                            
                         )
                 }
                 
             }
             .padding(10)
             
+            let progressPercentage = selectedImages.isEmpty ? 0 : Int((Double(currentIndex + 1) / Double(stringsCount)) * 100)
+            let percentageForegroundColor = Color("percentageForegroundColor")
             //ProgressView and Buttons for navigation
             HStack{
                 
                 //progress %
-                Text("10")
+                Text("\(progressPercentage)%")
                     .padding(.leading,10)
+                    .foregroundColor(percentageForegroundColor)
                 
-                CustomProgressViewStyle(progress: Double(currentIndex + 1), total: Double(selectedImages.count))
+                CustomProgressViewStyle(
+                    stringsCount: stringsCount,
+                    progress: Double(currentIndex + 1),
+                    total: Double(selectedImages.count))
                     .padding(10)
                 
                 Spacer()
@@ -124,8 +159,11 @@ struct ContentView: View {
 
 struct CustomProgressViewStyle: View {
     
+    var stringsCount: Int
     let progress: Double
     let total: Double
+    
+    
     
     let progressBackgroundColor = Color("progressBackgroundColor")
     let progressForegroundColor = Color("progressForegroundColor")
@@ -146,7 +184,7 @@ struct CustomProgressViewStyle: View {
                     //Foreground (progress)
                     RoundedRectangle(cornerRadius: 10)
                         .fill(progressForegroundColor)
-                        .frame(width: (progress/total) * geometry.size.width)
+                        .frame(width: (progress/Double(stringsCount)) * geometry.size.width)
             }
         }.frame(height: 10)
         
@@ -161,5 +199,5 @@ struct CustomProgressViewStyle: View {
     
         
     
-    ])
+    ], stringsCount: 0)
 }

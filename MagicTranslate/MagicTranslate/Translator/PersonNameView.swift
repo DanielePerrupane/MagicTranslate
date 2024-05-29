@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonNameView: View {
     
+    
     @State var personName = ""
     
     var body: some View {
@@ -33,8 +34,3 @@ struct PersonNameView: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        ProjectNameView()
-    }
-}

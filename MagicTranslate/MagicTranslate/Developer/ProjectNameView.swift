@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProjectNameView: View {
     
+    
+    var stringsCount: Int
     @State var projectName = ""
     
     var body: some View {
@@ -17,7 +19,7 @@ struct ProjectNameView: View {
                 .frame(width: 170)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
-            NavigationLink(destination: ScreenshotView(projectName: projectName)){
+            NavigationLink(destination: ScreenshotView(stringsCount: stringsCount, projectName: projectName)){
                 Text("Done")
                     .padding(3.0)
                     .foregroundColor(.white)
@@ -35,6 +37,6 @@ struct ProjectNameView: View {
 
 #Preview {
     NavigationStack {
-        ProjectNameView()
+        ProjectNameView(stringsCount: 0)
     }
 }

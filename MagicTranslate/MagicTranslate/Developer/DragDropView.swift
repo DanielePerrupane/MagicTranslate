@@ -14,6 +14,8 @@ struct DragDropView: View {
     @State private var jsonData: [String: Any] = [:]
     @State private var errorMessage: String?
     @State private var navigateToNextView = false
+    
+    @State private var stringsCount: Int = 0
    
     
     var body: some View {
@@ -25,10 +27,14 @@ struct DragDropView: View {
                     ScrollView{
                         
                         VStack{
-                            Text("File content: ")
-                                .padding(.top)
+                            
                             
                             if let strings = jsonData["strings"] as? [String: Any] {
+                                Text("You have \(strings.count) strings: ")
+                                    .padding(.top)
+                                    .onAppear {
+                                        self.stringsCount = strings.count
+                                    }
                                 ForEach(strings.keys.sorted(), id: \.self) { key in
                                     Text(key)
                                         .padding()
@@ -43,7 +49,7 @@ struct DragDropView: View {
                         .navigationTitle("File Content")
                         .toolbar{
                             ToolbarItem{
-                                NavigationLink(destination: ProjectNameView()) {
+                                NavigationLink(destination: ProjectNameView(stringsCount: stringsCount)) {
                                     Text("Done")
                                         .padding(3.0)
                                         .foregroundColor(.white)

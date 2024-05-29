@@ -9,7 +9,10 @@ import SwiftUI
 import PhotosUI
 
 struct ScreenshotView: View {
+    
+    var stringsCount: Int
     var projectName: String
+    
     @State private var arrayString: [String]?
     @State private var word = ""
     @State private var note = ""
@@ -107,7 +110,7 @@ struct ScreenshotView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .toolbar {
             ToolbarItem {
-                NavigationLink(destination: ContentView(selectedImages: selectedImages)) {
+                NavigationLink(destination: ContentView(selectedImages: selectedImages, stringsCount: stringsCount)) {
                     Text("Done")
                         .padding(3.0)
                         .foregroundColor(.white)
@@ -144,5 +147,5 @@ struct ScreenshotView: View {
 }
 
 #Preview {
-    ScreenshotView(projectName: "Example ProjectName")
+    ScreenshotView(stringsCount: 0, projectName: "Example ProjectName")
 }
