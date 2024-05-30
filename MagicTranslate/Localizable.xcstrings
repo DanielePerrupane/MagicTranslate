@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld%%" : {
-
-    },
     "+" : {
 
     },
@@ -11,9 +8,6 @@
 
     },
     "Done" : {
-
-    },
-    "Drag & Drop screenshot" : {
 
     },
     "Drag & Drop your localization file here" : {
@@ -31,7 +25,10 @@
     "Enter your project name: " : {
 
     },
-    "Example" : {
+    "Export to File" : {
+
+    },
+    "Extracted string:" : {
 
     },
     "File Content" : {
@@ -40,7 +37,16 @@
     "height: %lld" : {
 
     },
+    "Import File" : {
+
+    },
     "Language" : {
+
+    },
+    "Project Name" : {
+
+    },
+    "Project name:" : {
 
     },
     "Project Setup" : {

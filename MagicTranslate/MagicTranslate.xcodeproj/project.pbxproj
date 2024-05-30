@@ -16,12 +16,15 @@
 		1AB98FA42BFF39B90036552D /* getSupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA32BFF39B90036552D /* getSupportedLanguages.swift */; };
 		1AB98FA62BFF3A020036552D /* PathPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA52BFF3A020036552D /* PathPickerView.swift */; };
 		1AB98FA82BFF3A7C0036552D /* PersonNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA72BFF3A7C0036552D /* PersonNameView.swift */; };
+		1AD2F4C72C08848500B5530F /* CustomExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F4C32C08848500B5530F /* CustomExtension.swift */; };
+		1AD2F4C82C08848500B5530F /* ExportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F4C42C08848500B5530F /* ExportFile.swift */; };
+		1AD2F4C92C08848500B5530F /* ImportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F4C52C08848500B5530F /* ImportFile.swift */; };
+		1AD2F4CB2C0884FC00B5530F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F4CA2C0884FC00B5530F /* ContentView.swift */; };
 		E72EA9442BF7690200BF8D76 /* LanguagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EA9432BF7690200BF8D76 /* LanguagePickerView.swift */; };
 		E72EA9482BFB437700BF8D76 /* ProjectNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EA9472BFB437700BF8D76 /* ProjectNameView.swift */; };
 		E72EA94A2BFC894B00BF8D76 /* ScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EA9492BFC894B00BF8D76 /* ScreenshotView.swift */; };
 		E751894C2BF378AC00ABD7BB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E751894B2BF378AC00ABD7BB /* Localizable.xcstrings */; };
 		E7B835352BF23B1000615BA4 /* MagicTranslateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */; };
-		E7B835372BF23B1000615BA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B835362BF23B1000615BA4 /* ContentView.swift */; };
 		E7B835392BF23B1200615BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B835382BF23B1200615BA4 /* Assets.xcassets */; };
 		E7B8354C2BF372DC00615BA4 /* DragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8354B2BF372DC00615BA4 /* DragDropView.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +39,10 @@
 		1AB98FA32BFF39B90036552D /* getSupportedLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSupportedLanguages.swift; sourceTree = "<group>"; };
 		1AB98FA52BFF3A020036552D /* PathPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPickerView.swift; sourceTree = "<group>"; };
 		1AB98FA72BFF3A7C0036552D /* PersonNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameView.swift; sourceTree = "<group>"; };
+		1AD2F4C32C08848500B5530F /* CustomExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomExtension.swift; sourceTree = "<group>"; };
+		1AD2F4C42C08848500B5530F /* ExportFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportFile.swift; sourceTree = "<group>"; };
+		1AD2F4C52C08848500B5530F /* ImportFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportFile.swift; sourceTree = "<group>"; };
+		1AD2F4CA2C0884FC00B5530F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E72EA9432BF7690200BF8D76 /* LanguagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagePickerView.swift; sourceTree = "<group>"; };
 		E72EA9472BFB437700BF8D76 /* ProjectNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectNameView.swift; sourceTree = "<group>"; };
 		E72EA9492BFC894B00BF8D76 /* ScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotView.swift; sourceTree = "<group>"; };
@@ -43,7 +50,6 @@
 		E751894D2BF3CADE00ABD7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E7B835312BF23B1000615BA4 /* MagicTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicTranslateApp.swift; sourceTree = "<group>"; };
-		E7B835362BF23B1000615BA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E7B835382BF23B1200615BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7B8353D2BF23B1200615BA4 /* MagicTranslate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MagicTranslate.entitlements; sourceTree = "<group>"; };
 		E7B8354B2BF372DC00615BA4 /* DragDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDropView.swift; sourceTree = "<group>"; };
@@ -72,10 +78,21 @@
 		1AB98FA22BFF39A50036552D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				1AD2F4C62C08848500B5530F /* File Management */,
 				1A1CADF62C071E390043665A /* LocalizationData.swift */,
 				1AB98FA32BFF39B90036552D /* getSupportedLanguages.swift */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		1AD2F4C62C08848500B5530F /* File Management */ = {
+			isa = PBXGroup;
+			children = (
+				1AD2F4C32C08848500B5530F /* CustomExtension.swift */,
+				1AD2F4C42C08848500B5530F /* ExportFile.swift */,
+				1AD2F4C52C08848500B5530F /* ImportFile.swift */,
+			);
+			path = "File Management";
 			sourceTree = "<group>";
 		};
 		E72EA9452BF76AA600BF8D76 /* Developer */ = {
@@ -123,7 +140,7 @@
 				E72EA9462BF76AAE00BF8D76 /* Translator */,
 				E72EA9452BF76AA600BF8D76 /* Developer */,
 				E751894D2BF3CADE00ABD7BB /* Info.plist */,
-				E7B835362BF23B1000615BA4 /* ContentView.swift */,
+				1AD2F4CA2C0884FC00B5530F /* ContentView.swift */,
 				1AB98FA52BFF3A020036552D /* PathPickerView.swift */,
 				1A380E7F2BF73B8300B5120D /* DrawOverScreenshot.swift */,
 				E7B835382BF23B1200615BA4 /* Assets.xcassets */,
@@ -207,18 +224,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7B835372BF23B1000615BA4 /* ContentView.swift in Sources */,
 				1A1CADF72C071E390043665A /* LocalizationData.swift in Sources */,
 				E7B835352BF23B1000615BA4 /* MagicTranslateApp.swift in Sources */,
+				1AD2F4C82C08848500B5530F /* ExportFile.swift in Sources */,
 				1AB98FA82BFF3A7C0036552D /* PersonNameView.swift in Sources */,
 				E7B8354C2BF372DC00615BA4 /* DragDropView.swift in Sources */,
 				1AB98FA62BFF3A020036552D /* PathPickerView.swift in Sources */,
 				1AB98FA42BFF39B90036552D /* getSupportedLanguages.swift in Sources */,
 				1A380E802BF73B8300B5120D /* DrawOverScreenshot.swift in Sources */,
+				1AD2F4C72C08848500B5530F /* CustomExtension.swift in Sources */,
+				1AD2F4C92C08848500B5530F /* ImportFile.swift in Sources */,
 				1A1CADFB2C072DB30043665A /* CustomProgressViewStyle.swift in Sources */,
 				E72EA94A2BFC894B00BF8D76 /* ScreenshotView.swift in Sources */,
 				E72EA9442BF7690200BF8D76 /* LanguagePickerView.swift in Sources */,
 				1A1CADFD2C072DDE0043665A /* ProgressView.swift in Sources */,
+				1AD2F4CB2C0884FC00B5530F /* ContentView.swift in Sources */,
 				1A1CAE002C07311E0043665A /* ShareFileView.swift in Sources */,
 				E72EA9482BFB437700BF8D76 /* ProjectNameView.swift in Sources */,
 				1A1CADF92C07224A0043665A /* PathControllerView.swift in Sources */,
@@ -361,7 +381,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -369,6 +389,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Magic Translate";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select screenshots.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -392,7 +413,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = ZFK4JX3BJ7;
+				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -400,6 +421,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Magic Translate";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select screenshots.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
