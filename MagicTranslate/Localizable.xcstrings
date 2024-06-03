@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    ".mgtr imported successfully" : {
+
+    },
+    ".xcstrings imported successfully" : {
+
+    },
     "+" : {
 
     },
@@ -13,22 +19,25 @@
     "Drag & Drop your localization file here" : {
 
     },
-    "Drag&Drop an image here" : {
+    "Drag&Drop images here" : {
 
     },
     "Enter text here" : {
 
     },
-    "Enter your name: " : {
+    "Enter your name" : {
 
     },
-    "Enter your project name: " : {
+    "Enter your project name" : {
 
     },
-    "Export to File" : {
+    "Export" : {
 
     },
-    "Extracted string:" : {
+    "Export and share .mgtr file with translator" : {
+
+    },
+    "Export and share .xcstrings file with the developer" : {
 
     },
     "File Content" : {
@@ -43,10 +52,10 @@
     "Language" : {
 
     },
-    "Project Name" : {
+    "No items available" : {
 
     },
-    "Project name:" : {
+    "Project name: " : {
 
     },
     "Project Setup" : {
@@ -61,12 +70,6 @@
     "Setup" : {
 
     },
-    "Share" : {
-
-    },
-    "Share file with translator" : {
-
-    },
     "Translator" : {
 
     },
@@ -77,6 +80,9 @@
 
     },
     "y: %lld" : {
+
+    },
+    "Your name: " : {
 
     }
   },

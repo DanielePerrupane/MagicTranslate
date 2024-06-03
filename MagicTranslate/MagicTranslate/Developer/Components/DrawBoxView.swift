@@ -7,11 +7,17 @@
 
 import SwiftUI
 
-struct DrawOverScreenshot: View {
+struct DrawBoxView: View {
     
+    var localizationKey: String
     @State private var startLocation = CGPoint.zero
     @State private var currentLocation = CGPoint.zero
+    
+    @Binding var localizationItem: LocalizationItem
     var previewImage: NSImage
+    
+    @Environment(LocalizationData.self)
+    private var localizationData: LocalizationData
     
     var body: some View {
         PreviewImage(previewImage: previewImage)
@@ -36,21 +42,38 @@ struct DrawOverScreenshot: View {
                         .overlay{
                             SelectionBoxDebugInfo(debugEnabled: false, rect: rect)
                         }
+                        .onAppear{
+                            parseFromSaved()
+                        }
+                        .onChange(of: localizationKey){
+                            parseFromSaved()
+                        }
+                        .onChange(of: rect){
+                            localizationItem.boundBox.height = rect.height
+                            localizationItem.boundBox.width = rect.width
+                            localizationItem.boundBox.xPos = rect.minX
+                            localizationItem.boundBox.yPos = rect.minY
+                        }
                 }
             }
             .clipShape(.rect(cornerRadius: 10))
             .gesture(dragGesture())
-            .onChange(of: previewImage){
-                startLocation = CGPoint.zero
-                currentLocation = CGPoint.zero
-            }
+    }
+    
+    private func parseFromSaved(){
+        startLocation.x = localizationItem.boundBox.xPos
+        startLocation.y = localizationItem.boundBox.yPos
+        currentLocation.x = startLocation.x + localizationItem.boundBox.width
+        currentLocation.y = startLocation.y + localizationItem.boundBox.height
     }
     
     private func dragGesture() -> some Gesture {
         DragGesture()
             .onChanged { gesture in
-                startLocation = gesture.startLocation
-                currentLocation = gesture.location
+                if localizationData.selectedPath == .developer{
+                    startLocation = gesture.startLocation
+                    currentLocation = gesture.location
+                }
             }
     }
 }
@@ -84,8 +107,4 @@ struct SelectionBoxDebugInfo: View {
             .allowsHitTesting(false)
         }
     }
-}
-
-#Preview {
-    DrawOverScreenshot(previewImage: NSImage(resource: .appPlaceholder))
 }

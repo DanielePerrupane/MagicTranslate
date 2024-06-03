@@ -14,8 +14,7 @@ struct MagicTranslateApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            PathPickerView()
-            ContentView()
+            PathPickerView()
                 .environment(localizationData)
         }
     }

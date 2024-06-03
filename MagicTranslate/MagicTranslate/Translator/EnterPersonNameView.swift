@@ -7,14 +7,18 @@
 
 import SwiftUI
 
-struct PersonNameView: View {
+struct EnterPersonNameView: View {
     
-    
-    @State var personName = ""
+    @Environment(LocalizationData.self)
+    private var localizationData: LocalizationData
     
     var body: some View {
+        @Bindable var localizationData = localizationData
+        
         VStack {
-            TextField("Enter your name: ", text: $personName)
+            Text("Enter your name")
+            
+            TextField("Your name: ", text: $localizationData.personName)
                 .frame(width: 170)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             

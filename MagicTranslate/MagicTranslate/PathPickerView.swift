@@ -11,7 +11,7 @@ struct PathPickerView: View {
     var body: some View {
         NavigationStack {
             VStack{
-                NavigationLink(destination: DragDropView()){
+                NavigationLink(destination: EnterProjectNameView()){
                     Text("Developer")
                         .padding(3.0)
                         .foregroundColor(.white)
@@ -20,7 +20,7 @@ struct PathPickerView: View {
                 .background(Color.blue)
                 .cornerRadius(3.0)
                 
-                NavigationLink(destination: PersonNameView()){
+                NavigationLink(destination: ImportMGTRView()){
                     Text("Translator")
                         .padding(3.0)
                         .foregroundColor(.white)

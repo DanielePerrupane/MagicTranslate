@@ -9,35 +9,39 @@ import SwiftUI
 
 struct LanguagePickerView: View {
     
-    @State var selectedLanguage = "en"
     @State private var selectedImages: [NSImage] = []
     
     let supportedLanguagesWithNames = getAllSupportedLanguagesWithNames()
     
+    @Environment(LocalizationData.self)
+    private var localizationData: LocalizationData
     
     var body: some View {
+        @Bindable var localizationData = localizationData
+        
         VStack {
             Text("Select the language you want to localize to")
                 .font(.title)
                 .bold()
             
-            Picker("Language", selection: $selectedLanguage) {
+            Picker("Language", selection: $localizationData.selectedLanguage) {
                 ForEach(supportedLanguagesWithNames, id: \.code) { language in
-                    Text(language.name).tag(language.code)
+                    Text(language.name).tag(language.name)
                 }
             }
             .pickerStyle(.menu)
             .padding()
             
-//            NavigationLink(destination: ContentView(selectedImages: selectedImages)){
-//                Text("Done")
-//                    .padding(3.0)
-//                    .foregroundColor(.white)
-//            }
-//            .buttonStyle(PlainButtonStyle())
-//            .background(Color.blue)
-//            .cornerRadius(3.0)
+            NavigationLink(destination: PathControllerView()){
+                Text("Done")
+                    .padding(3.0)
+                    .foregroundColor(.white)
+            }
+            .buttonStyle(PlainButtonStyle())
+            .background(Color.blue)
+            .cornerRadius(3.0)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

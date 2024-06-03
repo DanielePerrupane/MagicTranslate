@@ -17,8 +17,22 @@ struct PathControllerView: View {
     var body: some View {
         
         VStack{
-            ScreenshotView(word: localizationData.extractedString[currentIndex])
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            if !localizationData.localizationItems.isEmpty {
+                let keys = Array(localizationData.localizationItems.keys)
+                let key = keys[currentIndex % keys.count] // Ensure index is within bounds
+
+                // Create a binding for the localization item
+                let localizationItemBinding = Binding(
+                    get: { localizationData.localizationItems[key] ?? LocalizationItem() },
+                    set: { localizationData.localizationItems[key] = $0 }
+                )
+
+                LocalizationView(localizationKey: key, localizationItem: localizationItemBinding)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                Text("No items available")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
             
             ProgressView(currentIndex: $currentIndex)
         }

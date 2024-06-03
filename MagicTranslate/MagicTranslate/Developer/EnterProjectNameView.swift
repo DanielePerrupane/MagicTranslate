@@ -7,31 +7,28 @@
 
 import SwiftUI
 
-struct ProjectNameView: View {
-    
-    
-    var stringsCount: Int
-    @State var projectName = ""
+struct EnterProjectNameView: View {
     
     @Environment(LocalizationData.self)
     private var localizationData: LocalizationData
     
     var body: some View {
+        @Bindable var localizationData = localizationData
+        
         VStack {
-            TextField("Enter your project name: ", text: $projectName)
+            Text("Enter your project name")
+            
+            TextField("Project name: ", text: $localizationData.projectName)
                 .frame(width: 170)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .onChange(of: projectName){
-                    localizationData.projectName = projectName
-                }
             
-            NavigationLink(destination: PathControllerView()){
+            NavigationLink(destination: ImportXCStringsView()){
                 Text("Done")
                     .padding(3.0)
                     .foregroundColor(.white)
             }
             .buttonStyle(PlainButtonStyle())
-            .background(Color.blue)
+            .background(.blue)
             .cornerRadius(3.0)
         }
         .frame(width: 400, height: 400)
@@ -42,7 +39,5 @@ struct ProjectNameView: View {
 }
 
 #Preview {
-    NavigationStack {
-        ProjectNameView(stringsCount: 0)
-    }
+    EnterProjectNameView()
 }
