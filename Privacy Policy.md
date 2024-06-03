@@ -1,3 +1,3 @@
 # Privacy Policy en-us
 
-Yaha does not store, sell or give away any of our users' data.
+Magic Translate does not store, sell or give away any of our users' data.
