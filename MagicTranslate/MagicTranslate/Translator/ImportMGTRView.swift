@@ -24,7 +24,7 @@ struct ImportMGTRView: View {
                 ContentUnavailableView {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.greenAccept)
-                        .font(.largeTitle)
+                        .font(.system(size: 70))
                 } description: {
                     Text(".mgtr imported successfully")
                         .font(.largeTitle)

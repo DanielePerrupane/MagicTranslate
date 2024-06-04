@@ -28,7 +28,7 @@ struct ImportXCStringsView: View {
                     ContentUnavailableView {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.greenAccept)
-                            .font(.largeTitle)
+                            .font(.system(size: 70))
                     } description: {
                         Text(".xcstrings imported successfully")
                             .font(.largeTitle)

@@ -73,9 +73,9 @@ struct ImagePickerView: View {
                                 }) {
                                     Image(systemName: "trash")
                                         .padding(.all, 5)
-                                        .foregroundColor(.red)
+                                        .foregroundColor(.gray)
                                         .background(.white)
-                                        .clipShape(.circle)
+                                        .clipShape(.rect(cornerRadius: 5))
                                 }
                                 .buttonStyle(PlainButtonStyle())
                                 
