@@ -62,22 +62,22 @@ struct ImagePickerView: View {
                                         .padding(5)
                                 }
                                 .buttonStyle(PlainButtonStyle())
-
-                                    // Delete
-                                    Button(action: {
-                                        withAnimation {
-                                            if selectedImages.indices.contains(index) {
-                                                selectedImages.remove(at: index)
-                                            }
+                                
+                                // Delete
+                                Button(action: {
+                                    withAnimation {
+                                        if selectedImages.indices.contains(index) {
+                                            selectedImages.remove(at: index)
                                         }
-                                    }) {
-                                        Image(systemName: "trash")
-                                            .padding(.all, 5)
-                                            .foregroundColor(.red)
-                                            .background(.white)
-                                            .clipShape(.circle)
                                     }
-                                    .buttonStyle(PlainButtonStyle())
+                                }) {
+                                    Image(systemName: "trash")
+                                        .padding(.all, 5)
+                                        .foregroundColor(.red)
+                                        .background(.white)
+                                        .clipShape(.circle)
+                                }
+                                .buttonStyle(PlainButtonStyle())
                                 
                             }
                         }
@@ -93,8 +93,12 @@ struct ImagePickerView: View {
     
     private func handleOnDrop(providers:[NSItemProvider]) -> Bool {
         var handled = false
+        let dispatchGroup = DispatchGroup()
+        
+        
         for provider in providers {
             if provider.hasItemConformingToTypeIdentifier("public.file-url") {
+                dispatchGroup.enter()
                 provider.loadItem(forTypeIdentifier: "public.file-url", options: nil) { data, error in
                     if let data = data as? Data,
                        let url = URL(dataRepresentation: data, relativeTo: nil),
@@ -107,10 +111,16 @@ struct ImagePickerView: View {
                         }
                         handled = true
                     }
+                    dispatchGroup.leave()
                 }
-                return handled
             }
         }
+        dispatchGroup.notify(queue: .main) {
+            if handled {
+                print("All images are succesfull processed.")
+            }
+        }
+        
         return handled
     }
 }
