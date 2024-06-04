@@ -12,6 +12,8 @@ struct ExportXCstringsView: View {
     @Environment(LocalizationData.self)
     private var localizationData: LocalizationData
     
+    @State private var fileURL: URL?
+    
     var body: some View {
         VStack{
             Text("Export and share .xcstrings file with the developer")
@@ -23,9 +25,16 @@ struct ExportXCstringsView: View {
                 exportXCStrings(exampleLocalizationData) { fileURL in
                     if let fileURL = fileURL {
                         print("File successfully exported to \(fileURL)")
+                        self.fileURL = fileURL
                     } else {
                         print("File export failed or was canceled")
                     }
+                }
+            }
+            
+            if let fileURL = fileURL {
+                ShareLink(item: fileURL, subject: Text("Your file")) {
+                    Text("Share the file")
                 }
             }
         }
