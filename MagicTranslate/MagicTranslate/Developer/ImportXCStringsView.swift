@@ -25,22 +25,30 @@ struct ImportXCStringsView: View {
             VStack {
                 if droppedFilePath != nil {
                     //After drag and drop
-                    ContentUnavailableView(".xcstrings imported successfully", systemImage: "checkmark.circle.fill")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .navigationTitle("File Content")
-                        .toolbar{
-                            ToolbarItem{
-                                NavigationLink(destination: PathControllerView()) {
-                                    Text("Done")
-                                        .padding(3.0)
-                                        .foregroundColor(.white)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                .background(.blue)
-                                .cornerRadius(3.0)
+                    ContentUnavailableView {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.greenAccept)
+                            .font(.largeTitle)
+                    } description: {
+                        Text(".xcstrings imported successfully")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .navigationTitle("File Content")
+                    .toolbar{
+                        ToolbarItem{
+                            NavigationLink(destination: PathControllerView()) {
+                                Text("Done")
+                                    .padding(3.0)
+                                    .foregroundColor(.white)
                             }
-                            
+                            .buttonStyle(PlainButtonStyle())
+                            .background(.blue)
+                            .cornerRadius(3.0)
                         }
+                        
+                    }
                     
                 } else {
                     //Before drag and drop

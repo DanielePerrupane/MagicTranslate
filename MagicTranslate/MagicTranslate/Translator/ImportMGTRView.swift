@@ -21,20 +21,28 @@ struct ImportMGTRView: View {
             if isImported{
                 // After import
                 
-                ContentUnavailableView(".mgtr imported successfully", systemImage: "checkmark.circle.fill")
-                    .navigationTitle("File Content")
-                    .toolbar{
-                        ToolbarItem{
-                            NavigationLink(destination: EnterPersonNameView()) {
-                                Text("Done")
-                                    .padding(3.0)
-                                    .foregroundColor(.white)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                            .background(.blue)
-                            .cornerRadius(3.0)
+                ContentUnavailableView {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(.greenAccept)
+                        .font(.largeTitle)
+                } description: {
+                    Text(".mgtr imported successfully")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                }
+                .navigationTitle("File Content")
+                .toolbar{
+                    ToolbarItem{
+                        NavigationLink(destination: EnterPersonNameView()) {
+                            Text("Done")
+                                .padding(3.0)
+                                .foregroundColor(.white)
                         }
+                        .buttonStyle(PlainButtonStyle())
+                        .background(.blue)
+                        .cornerRadius(3.0)
                     }
+                }
                 
             } else{
                 // Before import
