@@ -15,16 +15,14 @@ struct ProgressView: View {
     private var localizationData: LocalizationData
     
     var body: some View {
+        
         HStack{
-            
             //progress %
             Text(String(format: "%.0f%%", (Double(currentIndex + 1) / Double(localizationData.localizationItems.count)) * 100))
-                .padding(.leading,10)
                 .contentTransition(.numericText())
                 .animation(.easeInOut, value: currentIndex)
             
             CustomProgressViewStyle(progress: Double(currentIndex + 1), total: Double(localizationData.localizationItems.count))
-                .padding(10)
             
             Spacer()
             
@@ -39,7 +37,6 @@ struct ProgressView: View {
                     .foregroundColor(.gray)
             }
             .disabled(currentIndex == 0)
-            .padding(10)
             
             //R
             Button(action: {
@@ -52,7 +49,8 @@ struct ProgressView: View {
                     .foregroundColor(.gray)
             }
             .disabled(currentIndex >= localizationData.localizationItems.count - 1)
-            
         }
+        .padding()
+        
     }
 }
