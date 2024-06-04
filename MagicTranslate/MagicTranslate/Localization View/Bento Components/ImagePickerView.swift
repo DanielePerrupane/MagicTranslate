@@ -15,6 +15,12 @@ struct ImagePickerView: View {
     
     @State private var currentSelectedIndex: Int?
     
+    // Adapt to different screen sizes
+    // Fill remaining space even if column rows are specified as two
+    private let columns = [
+        GridItem(.adaptive(minimum: 100))
+    ]
+    
     var body: some View {
         
         ZStack {
@@ -36,55 +42,15 @@ struct ImagePickerView: View {
                 }
             } else {
                 ScrollView {
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 10), spacing: 10) {
+                    LazyVGrid(columns: columns) {
                         ForEach(selectedImages.indices, id: \.self) { index in
-                            ZStack(alignment: .topTrailing) {
-                                
-                                // Add
-                                Button(action: {
-                                    withAnimation {
-                                        localizationItem.screenshot = convertToPNGData(nsImage: selectedImages[index])
-                                        currentSelectedIndex = index
-                                    }
-                                }) {
-                                    Image(nsImage: selectedImages[index])
-                                        .resizable()
-                                        .scaledToFit()
-                                        .overlay{
-                                            // Dimming effect
-                                            Color.black
-                                                .opacity(currentSelectedIndex == index ? 0 : 0.5)
-                                        }
-                                        .onChange(of: localizationKey){
-                                            currentSelectedIndex = nil
-                                        }
-                                        .frame(width: 100, height: 100)
-                                        .padding(5)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                
-                                // Delete
-                                Button(action: {
-                                    withAnimation {
-                                        if selectedImages.indices.contains(index) {
-                                            selectedImages.remove(at: index)
-                                        }
-                                    }
-                                }) {
-                                    Image(systemName: "trash")
-                                        .padding(.all, 5)
-                                        .foregroundColor(.gray)
-                                        .background(.white)
-                                        .clipShape(.rect(cornerRadius: 5))
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                
-                            }
+                            SingleImagePreview(selectedImages: $selectedImages, localizationItem: $localizationItem, currentSelectedIndex: $currentSelectedIndex, localizationKey: localizationKey, index: index)
                         }
                     }
                     .padding(10)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -123,4 +89,63 @@ struct ImagePickerView: View {
         
         return handled
     }
+}
+
+
+struct SingleImagePreview: View {
+    
+    @Binding var selectedImages: [NSImage]
+    @Binding var localizationItem: LocalizationItem
+    @Binding var currentSelectedIndex: Int?
+    var localizationKey: String
+    var index: Int
+    
+    var body: some View {
+        ZStack(alignment: .topTrailing) {
+            
+            // Add
+            Button(action: {
+                withAnimation {
+                    localizationItem.screenshot = convertToPNGData(nsImage: selectedImages[index])
+                    currentSelectedIndex = index
+                }
+            }) {
+                Rectangle()
+                    .aspectRatio(1, contentMode: .fit)
+                    .foregroundStyle(.clear)
+                    .overlay{
+                        Image(nsImage: selectedImages[index])
+                            .resizable()
+                            .scaledToFit()
+                            .overlay{
+                                // Dimming effect
+                                Color.black
+                                    .opacity(currentSelectedIndex == index ? 0 : 0.5)
+                            }
+                            .onChange(of: localizationKey){
+                                currentSelectedIndex = nil
+                            }
+                    }
+            }
+            .buttonStyle(PlainButtonStyle())
+            
+            // Delete
+            Button(action: {
+                withAnimation {
+                    if selectedImages.indices.contains(index) {
+                        selectedImages.remove(at: index)
+                    }
+                }
+            }) {
+                Image(systemName: "trash")
+                    .padding(.all, 5)
+                    .foregroundColor(.gray)
+                    .background(.white)
+                    .clipShape(.rect(cornerRadius: 5))
+            }
+            .buttonStyle(PlainButtonStyle())
+            
+        }
+    }
+    
 }
