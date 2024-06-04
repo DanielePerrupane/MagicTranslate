@@ -40,6 +40,9 @@
     "Export and share .xcstrings file with the developer" : {
 
     },
+    "Export File" : {
+
+    },
     "File Content" : {
 
     },
@@ -70,6 +73,9 @@
     "Setup" : {
 
     },
+    "Share the file" : {
+
+    },
     "Translator" : {
 
     },
@@ -80,6 +86,9 @@
 
     },
     "y: %lld" : {
+
+    },
+    "Your file" : {
 
     },
     "Your name: " : {
