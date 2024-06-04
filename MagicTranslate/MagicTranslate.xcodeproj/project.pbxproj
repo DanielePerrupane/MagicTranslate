@@ -21,6 +21,7 @@
 		1A6314372C0D9B180022F6CF /* ConvertToPngData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6314362C0D9B180022F6CF /* ConvertToPngData.swift */; };
 		1A6314392C0D9D540022F6CF /* TranslatedWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6314382C0D9D540022F6CF /* TranslatedWordView.swift */; };
 		1A63143B2C0D9E840022F6CF /* ExportXCstringsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A63143A2C0D9E840022F6CF /* ExportXCstringsView.swift */; };
+		1A83AE372C0F38E600C42429 /* XCStringsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83AE362C0F38E600C42429 /* XCStringsModel.swift */; };
 		1AB98FA42BFF39B90036552D /* GetSupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA32BFF39B90036552D /* GetSupportedLanguages.swift */; };
 		1AB98FA62BFF3A020036552D /* PathPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA52BFF3A020036552D /* PathPickerView.swift */; };
 		1AB98FA82BFF3A7C0036552D /* EnterPersonNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA72BFF3A7C0036552D /* EnterPersonNameView.swift */; };
@@ -51,6 +52,7 @@
 		1A6314362C0D9B180022F6CF /* ConvertToPngData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertToPngData.swift; sourceTree = "<group>"; };
 		1A6314382C0D9D540022F6CF /* TranslatedWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedWordView.swift; sourceTree = "<group>"; };
 		1A63143A2C0D9E840022F6CF /* ExportXCstringsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportXCstringsView.swift; sourceTree = "<group>"; };
+		1A83AE362C0F38E600C42429 /* XCStringsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCStringsModel.swift; sourceTree = "<group>"; };
 		1AB98FA32BFF39B90036552D /* GetSupportedLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSupportedLanguages.swift; sourceTree = "<group>"; };
 		1AB98FA52BFF3A020036552D /* PathPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPickerView.swift; sourceTree = "<group>"; };
 		1AB98FA72BFF3A7C0036552D /* EnterPersonNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPersonNameView.swift; sourceTree = "<group>"; };
@@ -126,9 +128,18 @@
 			path = "Bento Components";
 			sourceTree = "<group>";
 		};
+		1A83AE352C0F38D700C42429 /* XCStringsModel */ = {
+			isa = PBXGroup;
+			children = (
+				1A83AE362C0F38E600C42429 /* XCStringsModel.swift */,
+			);
+			path = XCStringsModel;
+			sourceTree = "<group>";
+		};
 		1AB98FA22BFF39A50036552D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A83AE352C0F38D700C42429 /* XCStringsModel */,
 				1AD2F4C62C08848500B5530F /* File Management */,
 				1A1CADF62C071E390043665A /* LocalizationDataModel.swift */,
 				1AB98FA32BFF39B90036552D /* GetSupportedLanguages.swift */,
@@ -278,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1CADF72C071E390043665A /* LocalizationDataModel.swift in Sources */,
+				1A83AE372C0F38E600C42429 /* XCStringsModel.swift in Sources */,
 				E7B835352BF23B1000615BA4 /* MagicTranslateApp.swift in Sources */,
 				1AD2F4C82C08848500B5530F /* ExportFile.swift in Sources */,
 				1AB98FA82BFF3A7C0036552D /* EnterPersonNameView.swift in Sources */,

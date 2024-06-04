@@ -31,6 +31,11 @@ struct LanguagePickerView: View {
             }
             .pickerStyle(.menu)
             .padding()
+            .onChange(of: localizationData.selectedLanguage) {
+                if let selectedLanguageCode = supportedLanguagesWithNames.first(where: { $0.name == localizationData.selectedLanguage })?.code {
+                    localizationData.selectedLanguageCode = selectedLanguageCode
+                }
+            }
             
             NavigationLink(destination: PathControllerView()){
                 Text("Done")

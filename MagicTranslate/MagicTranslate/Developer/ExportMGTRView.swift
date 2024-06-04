@@ -18,7 +18,7 @@ struct ExportMGTRView: View {
             Text("Export and share .mgtr file with translator")
             
             Button(action: {
-                exportFile(localizationData) { url in
+                exportMGTR(localizationData) { url in
                     self.fileURL = url
                 }
             }) {

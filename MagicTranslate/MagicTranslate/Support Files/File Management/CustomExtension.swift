@@ -12,3 +12,10 @@ extension UTType {
         UTType(exportedAs: "dev.novoselov.mgtr")
     }
 }
+
+// Define a custom UTType for .xcstrings
+extension UTType {
+    static var xcstrings: UTType {
+        UTType(importedAs: "dev.novoselov.xcstrings")
+    }
+}

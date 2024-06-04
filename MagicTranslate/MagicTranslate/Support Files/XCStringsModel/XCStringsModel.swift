@@ -1,13 +1,36 @@
 //
-//  ExportFile.swift
-//  EncodingTest
+//  XCStringsModel.swift
+//  MagicTranslate
 //
-//  Created by Matt Novoselov on 29/05/24.
+//  Created by Matt Novoselov on 04/06/24.
 //
 
 import AppKit
+import UniformTypeIdentifiers
 
-func exportMGTR(_ data: LocalizationData, completion: @escaping (URL?) -> Void) {
+// Define the data model (assuming you already have this defined)
+struct XCStringsModel: Codable {
+    var projectName: String
+    var sourceLanguage: String
+    var strings: [String: StringData] = [:]
+    var version: String
+}
+
+struct StringData: Codable {
+    var localizations: [String: Localization]?
+}
+
+struct Localization: Codable {
+    var stringUnit: StringUnit
+}
+
+struct StringUnit: Codable {
+    var state: String = "translated"
+    var value: String
+}
+
+// Function to export file with save panel
+func exportXCStrings(_ data: XCStringsModel, completion: @escaping (URL?) -> Void) {
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     
@@ -17,14 +40,14 @@ func exportMGTR(_ data: LocalizationData, completion: @escaping (URL?) -> Void) 
         // Present the save panel to the user
         let savePanel = NSSavePanel()
         savePanel.title = "Save Localization Data"
-        savePanel.allowedContentTypes = [.magicTranslate]
-        savePanel.nameFieldStringValue = data.projectName
+        savePanel.allowedContentTypes = [UTType.xcstrings]
+        savePanel.nameFieldStringValue = "Localizable.xcstrings"
         
         savePanel.begin { response in
             if response == .OK {
                 if let fileURL = savePanel.url {
                     // Ensure the file URL has the correct custom extension
-                    let finalURL = fileURL.deletingPathExtension().appendingPathExtension(for: .magicTranslate)
+                    let finalURL = fileURL.deletingPathExtension().appendingPathExtension("xcstrings")
                     do {
                         // Write the JSON data to the selected file URL
                         try jsonData.write(to: finalURL)

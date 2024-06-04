@@ -18,6 +18,7 @@ class LocalizationData: Codable {
     // Not savable properties
     var selectedPath: Path = .developer
     var selectedLanguage: String = "English"
+    var selectedLanguageCode: String = "en"
     var personName: String = ""
     
     // Savable properties
