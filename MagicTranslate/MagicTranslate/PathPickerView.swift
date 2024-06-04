@@ -11,23 +11,31 @@ struct PathPickerView: View {
     var body: some View {
         NavigationStack {
             VStack{
-                NavigationLink(destination: EnterProjectNameView()){
+                NavigationLink(destination: EnterProjectNameView()) {
                     Text("Developer")
-                        .padding(3.0)
+                        .padding(.horizontal, 20.0)
+                        .padding(.vertical, 10.0)
                         .foregroundColor(.white)
+                        .background(
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color(red: 0.31, green: 0.31, blue: 0.31))
+                        )
                 }
                 .buttonStyle(PlainButtonStyle())
-                .background(Color.blue)
-                .cornerRadius(3.0)
+                .padding(.horizontal)
                 
-                NavigationLink(destination: ImportMGTRView()){
+                NavigationLink(destination: ImportMGTRView()) {
                     Text("Translator")
-                        .padding(3.0)
+                        .padding(.horizontal, 20.0)
+                        .padding(.vertical, 10.0)
                         .foregroundColor(.white)
+                        .background(
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color(red: 0.31, green: 0.31, blue: 0.31))
+                        )
                 }
                 .buttonStyle(PlainButtonStyle())
-                .background(Color.blue)
-                .cornerRadius(3.0)
+                .padding(.horizontal)
             }
         }
         .navigationTitle("Select your role")
