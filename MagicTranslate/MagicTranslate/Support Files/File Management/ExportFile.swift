@@ -7,7 +7,7 @@
 
 import AppKit
 
-func exportFile(_ data: LocalizationData) {
+func exportFile(_ data: LocalizationData, completion: @escaping (URL?) -> Void) {
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     
@@ -29,16 +29,22 @@ func exportFile(_ data: LocalizationData) {
                         // Write the JSON data to the selected file URL
                         try jsonData.write(to: finalURL)
                         print("File saved to: \(finalURL.path)")
+                        completion(finalURL)
                     } catch {
                         print("Failed to save file: \(error.localizedDescription)")
+                        completion(nil)
                     }
+                } else {
+                    completion(nil)
                 }
             } else {
                 print("Save panel was canceled")
+                completion(nil)
             }
         }
         
     } catch {
         print("Failed to encode data: \(error.localizedDescription)")
+        completion(nil)
     }
 }
