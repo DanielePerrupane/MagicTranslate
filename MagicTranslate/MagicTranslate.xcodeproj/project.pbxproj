@@ -25,6 +25,7 @@
 		1AB98FA42BFF39B90036552D /* GetSupportedLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA32BFF39B90036552D /* GetSupportedLanguages.swift */; };
 		1AB98FA62BFF3A020036552D /* PathPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA52BFF3A020036552D /* PathPickerView.swift */; };
 		1AB98FA82BFF3A7C0036552D /* EnterPersonNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB98FA72BFF3A7C0036552D /* EnterPersonNameView.swift */; };
+		1ACA0B4D2C107681006966A7 /* NewCustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA0B4C2C107681006966A7 /* NewCustomTextFieldStyle.swift */; };
 		1AD2F4C72C08848500B5530F /* CustomExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F4C32C08848500B5530F /* CustomExtension.swift */; };
 		1AD2F4C82C08848500B5530F /* ExportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F4C42C08848500B5530F /* ExportFile.swift */; };
 		1AD2F4C92C08848500B5530F /* ImportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F4C52C08848500B5530F /* ImportFile.swift */; };
@@ -56,6 +57,7 @@
 		1AB98FA32BFF39B90036552D /* GetSupportedLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSupportedLanguages.swift; sourceTree = "<group>"; };
 		1AB98FA52BFF3A020036552D /* PathPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPickerView.swift; sourceTree = "<group>"; };
 		1AB98FA72BFF3A7C0036552D /* EnterPersonNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPersonNameView.swift; sourceTree = "<group>"; };
+		1ACA0B4C2C107681006966A7 /* NewCustomTextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		1AD2F4C32C08848500B5530F /* CustomExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomExtension.swift; sourceTree = "<group>"; };
 		1AD2F4C42C08848500B5530F /* ExportFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportFile.swift; sourceTree = "<group>"; };
 		1AD2F4C52C08848500B5530F /* ImportFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportFile.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		1A12ABA62C0CE59B00C95BB1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1ACA0B4C2C107681006966A7 /* NewCustomTextFieldStyle.swift */,
 				1A1CADFE2C072E5F0043665A /* Progress Bar */,
 			);
 			path = Components;
@@ -304,6 +307,7 @@
 				1AD2F4C72C08848500B5530F /* CustomExtension.swift in Sources */,
 				1A6314392C0D9D540022F6CF /* TranslatedWordView.swift in Sources */,
 				1AD2F4C92C08848500B5530F /* ImportFile.swift in Sources */,
+				1ACA0B4D2C107681006966A7 /* NewCustomTextFieldStyle.swift in Sources */,
 				1A1CADFB2C072DB30043665A /* CustomProgressViewStyle.swift in Sources */,
 				1A6314352C0D9AD70022F6CF /* ImagePickerView.swift in Sources */,
 				1A6314372C0D9B180022F6CF /* ConvertToPngData.swift in Sources */,
