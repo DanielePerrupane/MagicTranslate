@@ -110,14 +110,18 @@ struct SingleImagePreview: View {
                     .aspectRatio(1, contentMode: .fit)
                     .foregroundStyle(.clear)
                     .overlay{
-                        Image(nsImage: selectedImages[index])
-                            .resizable()
-                            .scaledToFit()
-                            .overlay{
-                                // Dimming effect
-                                Color.black
-                                    .opacity(localizationItem.screenshot == convertToPNGData(nsImage: selectedImages[index]) ? 0 : 0.5)
-                            }
+                        if selectedImages.indices.contains(index) {
+                            let unwrappedImage = selectedImages[index]
+                            // Use unwrappedImage safely here
+                            Image(nsImage: unwrappedImage)
+                                .resizable()
+                                .scaledToFit()
+                                .overlay{
+                                    // Dimming effect
+                                    Color.black
+                                        .opacity(localizationItem.screenshot == convertToPNGData(nsImage: selectedImages[index]) ? 0 : 0.5)
+                                }
+                        }
                     }
             }
             .buttonStyle(PlainButtonStyle())
@@ -126,6 +130,10 @@ struct SingleImagePreview: View {
             Button(action: {
                 withAnimation {
                     if selectedImages.indices.contains(index) {
+                        if localizationItem.screenshot == convertToPNGData(nsImage: selectedImages[index]){
+                            localizationItem.screenshot = nil
+                        }
+                        
                         selectedImages.remove(at: index)
                     }
                 }
