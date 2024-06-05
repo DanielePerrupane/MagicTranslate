@@ -7,24 +7,6 @@
 
 import SwiftUI
 
-struct CustomTextField: TextFieldStyle {
-    var backgroundColor: Color
-    var textColor: Color
-    var cornerRadius: CGFloat
-    var height: CGFloat
-    
-    func _body(configuration: TextField<_Label>) -> some View {
-        configuration
-            .foregroundColor(textColor)
-            .overlay(
-                Rectangle()
-                    .allowsHitTesting(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(backgroundColor)
-            )
-            .frame(height: height)
-    }
-}
-
 struct EnterProjectNameView: View {
     
     @Environment(LocalizationData.self)
@@ -40,7 +22,7 @@ struct EnterProjectNameView: View {
             
             VStack(spacing: 0) {
                 TextField("Project name: ", text: $localizationData.projectName)
-                    .textFieldStyle(CustomTextField(backgroundColor: Color.gray.opacity(0.5), textColor: .white, cornerRadius: 8, height: 40))
+                    .textFieldStyle(CustomTextFieldStyle(backgroundColor: Color.gray.opacity(0.5), textColor: .white, cornerRadius: 8, height: 40))
                     .frame(width: 170)
                 
                 NavigationLink(destination: ImportXCStringsView()){

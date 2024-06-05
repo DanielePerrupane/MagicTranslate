@@ -49,7 +49,10 @@
     "height: %lld" : {
 
     },
-    "Import File" : {
+    "Import .mgtr" : {
+
+    },
+    "Import an .mgtr file" : {
 
     },
     "Language" : {
