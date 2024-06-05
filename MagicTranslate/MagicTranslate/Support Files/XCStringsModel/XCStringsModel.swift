@@ -17,6 +17,7 @@ struct XCStringsModel: Codable {
 }
 
 struct StringData: Codable {
+    var comment: String?
     var localizations: [String: Localization]?
 }
 
