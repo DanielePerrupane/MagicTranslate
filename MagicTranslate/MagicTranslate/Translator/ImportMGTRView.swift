@@ -20,41 +20,56 @@ struct ImportMGTRView: View {
         VStack {
             if isImported{
                 // After import
-                
-                ContentUnavailableView {
+                VStack(spacing: 10) {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.greenAccept)
-                        .font(.system(size: 70))
-                } description: {
+                        .font(.system(size: 50))
+                
                     Text(".mgtr imported successfully")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .font(.title3)
                 }
                 .navigationTitle("File Content")
                 .toolbar{
                     ToolbarItem{
                         NavigationLink(destination: EnterPersonNameView()) {
                             Text("Done")
-                                .padding(3.0)
+                                .padding(6.0)
                                 .foregroundColor(.white)
                         }
                         .buttonStyle(PlainButtonStyle())
-                        .background(.blue)
+                        .background(.pastelBlue)
                         .cornerRadius(3.0)
                     }
                 }
                 
             } else{
                 // Before import
-                Button("Import File") {
-                    importFile { data in
-                        if let data = data {
-                            localizationData.projectName = data.projectName
-                            localizationData.localizationItems = data.localizationItems
-                            isImported = true
-                            localizationData.selectedPath = .translator
+                
+                VStack(spacing: 20) {
+                    Text("Import an .mgtr file")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    
+                    Button(action: {
+                        importFile { data in
+                            if let data = data {
+                                localizationData.projectName = data.projectName
+                                localizationData.localizationItems = data.localizationItems
+                                isImported = true
+                                localizationData.selectedPath = .translator
+                            }
                         }
+                    }) {
+                        Text("Import .mgtr")
+                            .padding(.horizontal, 20.0)
+                            .padding(.vertical, 10.0)
+                            .foregroundColor(.white)
+                            .background(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(Color(red: 0.31, green: 0.31, blue: 0.31))
+                            )
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }

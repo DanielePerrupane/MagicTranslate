@@ -17,18 +17,20 @@ struct EnterPersonNameView: View {
         
         VStack {
             Text("Enter your name")
+                .font(.title2)
+                .fontWeight(.semibold)
             
             TextField("Your name: ", text: $localizationData.personName)
                 .frame(width: 170)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textFieldStyle(CustomTextFieldStyle(backgroundColor: Color.gray.opacity(0.5), textColor: .white, cornerRadius: 8, height: 40))
             
             NavigationLink(destination: LanguagePickerView()){
                 Text("Done")
-                    .padding(3.0)
+                    .padding(6.0)
                     .foregroundColor(.white)
             }
             .buttonStyle(PlainButtonStyle())
-            .background(Color.blue)
+            .background(Color.pastelBlue)
             .cornerRadius(3.0)
         }
         .frame(width: 400, height: 400)

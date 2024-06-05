@@ -16,6 +16,7 @@ struct MagicTranslateApp: App {
         WindowGroup {
             PathPickerView()
                 .environment(localizationData)
+                .preferredColorScheme(.dark)
         }
     }
 }

@@ -52,7 +52,7 @@ struct LocalizationView: View {
                 if localizationData.selectedPath == .developer{
                     NavigationLink(destination: ExportMGTRView()) {
                         Text("Done")
-                            .padding(3.0)
+                            .padding(6.0)
                             .foregroundColor(.white)
                     }
                     .buttonStyle(PlainButtonStyle())
@@ -61,7 +61,7 @@ struct LocalizationView: View {
                 } else{
                     NavigationLink(destination: ExportXCstringsView()) {
                         Text("Done")
-                            .padding(3.0)
+                            .padding(6.0)
                             .foregroundColor(.white)
                     }
                     .buttonStyle(PlainButtonStyle())
