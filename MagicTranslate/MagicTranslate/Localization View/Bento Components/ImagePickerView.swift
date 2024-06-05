@@ -13,8 +13,6 @@ struct ImagePickerView: View {
     @Binding var localizationItem: LocalizationItem
     var localizationKey: String
     
-    @State private var currentSelectedIndex: Int?
-    
     // Adapt to different screen sizes
     // Fill remaining space even if column rows are specified as two
     private let columns = [
@@ -44,7 +42,7 @@ struct ImagePickerView: View {
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(selectedImages.indices, id: \.self) { index in
-                            SingleImagePreview(selectedImages: $selectedImages, localizationItem: $localizationItem, currentSelectedIndex: $currentSelectedIndex, localizationKey: localizationKey, index: index)
+                            SingleImagePreview(selectedImages: $selectedImages, localizationItem: $localizationItem, localizationKey: localizationKey, index: index)
                         }
                     }
                     .padding(10)
@@ -83,7 +81,7 @@ struct ImagePickerView: View {
         }
         dispatchGroup.notify(queue: .main) {
             if handled {
-                print("All images are succesfull processed.")
+                print("All images are successful processed.")
             }
         }
         
@@ -96,7 +94,6 @@ struct SingleImagePreview: View {
     
     @Binding var selectedImages: [NSImage]
     @Binding var localizationItem: LocalizationItem
-    @Binding var currentSelectedIndex: Int?
     var localizationKey: String
     var index: Int
     
@@ -107,7 +104,6 @@ struct SingleImagePreview: View {
             Button(action: {
                 withAnimation {
                     localizationItem.screenshot = convertToPNGData(nsImage: selectedImages[index])
-                    currentSelectedIndex = index
                 }
             }) {
                 Rectangle()
@@ -120,10 +116,7 @@ struct SingleImagePreview: View {
                             .overlay{
                                 // Dimming effect
                                 Color.black
-                                    .opacity(currentSelectedIndex == index ? 0 : 0.5)
-                            }
-                            .onChange(of: localizationKey){
-                                currentSelectedIndex = nil
+                                    .opacity(localizationItem.screenshot == convertToPNGData(nsImage: selectedImages[index]) ? 0 : 0.5)
                             }
                     }
             }
