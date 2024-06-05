@@ -21,30 +21,33 @@ struct LanguagePickerView: View {
         
         VStack {
             Text("Select the language you want to localize to")
-                .font(.title)
-                .bold()
+                .font(.title2)
+                .fontWeight(.semibold)
             
-            Picker("Language", selection: $localizationData.selectedLanguage) {
-                ForEach(supportedLanguagesWithNames, id: \.code) { language in
-                    Text(language.name).tag(language.name)
+            VStack {
+                Picker("", selection: $localizationData.selectedLanguage) {
+                    ForEach(supportedLanguagesWithNames, id: \.code) { language in
+                        Text(language.name).tag(language.name)
+                    }
                 }
-            }
-            .pickerStyle(.menu)
-            .padding()
-            .onChange(of: localizationData.selectedLanguage) {
-                if let selectedLanguageCode = supportedLanguagesWithNames.first(where: { $0.name == localizationData.selectedLanguage })?.code {
-                    localizationData.selectedLanguageCode = selectedLanguageCode
+                .pickerStyle(.menu)
+                .frame(width: 200)
+                .padding()
+                .onChange(of: localizationData.selectedLanguage) {
+                    if let selectedLanguageCode = supportedLanguagesWithNames.first(where: { $0.name == localizationData.selectedLanguage })?.code {
+                        localizationData.selectedLanguageCode = selectedLanguageCode
+                    }
                 }
+                
+                NavigationLink(destination: PathControllerView()){
+                    Text("Done")
+                        .padding(6.0)
+                        .foregroundColor(.white)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .background(Color.pastelBlue)
+                .cornerRadius(3.0)
             }
-            
-            NavigationLink(destination: PathControllerView()){
-                Text("Done")
-                    .padding(3.0)
-                    .foregroundColor(.white)
-            }
-            .buttonStyle(PlainButtonStyle())
-            .background(Color.blue)
-            .cornerRadius(3.0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

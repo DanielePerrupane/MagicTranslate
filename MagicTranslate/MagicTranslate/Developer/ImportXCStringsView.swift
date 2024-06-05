@@ -24,15 +24,13 @@ struct ImportXCStringsView: View {
         NavigationStack {
             VStack {
                 if droppedFilePath != nil {
-                    //After drag and drop
-                    ContentUnavailableView {
+                    VStack(spacing: 10) {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.greenAccept)
-                            .font(.system(size: 70))
-                    } description: {
+                            .font(.system(size: 50))
+                    
                         Text(".xcstrings imported successfully")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+                            .font(.title3)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .navigationTitle("File Content")
@@ -40,11 +38,11 @@ struct ImportXCStringsView: View {
                         ToolbarItem{
                             NavigationLink(destination: PathControllerView()) {
                                 Text("Done")
-                                    .padding(3.0)
+                                    .padding(6.0)
                                     .foregroundColor(.white)
                             }
                             .buttonStyle(PlainButtonStyle())
-                            .background(.blue)
+                            .background(Color.pastelBlue)
                             .cornerRadius(3.0)
                         }
                         
@@ -60,6 +58,8 @@ struct ImportXCStringsView: View {
                                 .foregroundColor(.gray)
                             Text("Drag & Drop your localization file here")
                                 .foregroundColor(.gray)
+                                .font(.title3)
+                                .navigationTitle("Drag & Drop .xcstrings")
                         }.padding()
                         
                         if let errorMessage = errorMessage {

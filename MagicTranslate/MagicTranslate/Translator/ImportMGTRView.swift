@@ -20,22 +20,20 @@ struct ImportMGTRView: View {
         VStack {
             if isImported{
                 // After import
-                
-                ContentUnavailableView {
+                VStack(spacing: 10) {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.greenAccept)
-                        .font(.system(size: 70))
-                } description: {
+                        .font(.system(size: 50))
+                
                     Text(".mgtr imported successfully")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .font(.title3)
                 }
                 .navigationTitle("File Content")
                 .toolbar{
                     ToolbarItem{
                         NavigationLink(destination: EnterPersonNameView()) {
                             Text("Done")
-                                .padding(3.0)
+                                .padding(6.0)
                                 .foregroundColor(.white)
                         }
                         .buttonStyle(PlainButtonStyle())
@@ -52,17 +50,6 @@ struct ImportMGTRView: View {
                         .font(.title2)
                         .fontWeight(.semibold)
                     
-//                    Button("Import File") {
-//                        importFile { data in
-//                            if let data = data {
-//                                localizationData.projectName = data.projectName
-//                                localizationData.localizationItems = data.localizationItems
-//                                isImported = true
-//                                localizationData.selectedPath = .translator
-//                            }
-//                        }
-//                    }
-                    //                    .buttonStyle(PlainButtonStyle())
                     Button(action: {
                         importFile { data in
                             if let data = data {

@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     ".mgtr imported successfully" : {
 
     },
@@ -14,6 +17,9 @@
 
     },
     "Done" : {
+
+    },
+    "Drag & Drop .xcstrings" : {
 
     },
     "Drag & Drop your localization file here" : {
@@ -53,9 +59,6 @@
 
     },
     "Import an .mgtr file" : {
-
-    },
-    "Language" : {
 
     },
     "No items available" : {
