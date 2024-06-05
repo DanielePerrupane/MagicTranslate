@@ -22,9 +22,15 @@ struct TranslatorsNoteView: View {
                     .foregroundColor(.white)
                     .font(.title3)
                 
-                TextField("Enter text here", text: $localizationItem.translated)
-                    .frame(maxWidth: .infinity)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                if localizationData.selectedPath == .translator{
+                    Text(localizationItem.comment)
+                        .foregroundStyle(.secondary)
+                    
+                } else{
+                    TextField("Enter text here", text: $localizationItem.comment)
+                        .frame(maxWidth: .infinity)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
             }
             
             Spacer()
