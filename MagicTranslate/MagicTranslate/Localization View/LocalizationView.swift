@@ -42,6 +42,8 @@ struct LocalizationView: View {
                 }
             }
         }
+        .background(.red)
+        .padding()
         .navigationTitle(localizationData.projectName)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .toolbar {

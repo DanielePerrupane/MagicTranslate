@@ -26,7 +26,6 @@ struct ImagePickerView: View {
                 .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .foregroundColor(.gray)
-                .padding(10)
                 .onDrop(of: ["public.file-url"], isTargeted: nil) { providers in
                     handleOnDrop(providers: providers)
                 }

@@ -15,26 +15,31 @@ struct TranslatedWordView: View {
     private var localizationData: LocalizationData
     
     var body: some View {
-        
-        VStack(alignment: .leading) {
+
+        HStack{
+            VStack(alignment: .leading, spacing: 5) {
+                Text(localizationData.selectedLanguage.uppercased())
+                    .foregroundColor(.white)
+                    .font(.title3)
+                
+                if localizationData.selectedPath == .translator{
+                    Text(localizationItem.comment)
+                        .foregroundStyle(.secondary)
+                    
+                } else{
+                    TextField("Enter text here", text: $localizationItem.comment)
+                        .frame(maxWidth: .infinity)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+            }
             
-            Text("\(localizationData.selectedLanguage)".uppercased())
-                .foregroundColor(.white)
-                .font(.title3)
-                .padding(.top,10)
-                .padding(.horizontal,10)
-            
-            TextField("Enter text here", text: $localizationItem.translated)
-                .padding(.bottom,10)
-                .padding(.horizontal,10)
-                .frame(maxWidth: .infinity)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            
+            Spacer()
         }
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color(red: 0.31, green: 0.31, blue: 0.31)))
-        .padding(10)
+        .padding()
+        .background{
+            Color(red: 0.31, green: 0.31, blue: 0.31)
+                .cornerRadius(10)
+        }
         
     }
 }
