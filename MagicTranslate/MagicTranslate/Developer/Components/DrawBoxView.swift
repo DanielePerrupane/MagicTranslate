@@ -19,6 +19,8 @@ struct DrawBoxView: View {
     @Environment(LocalizationData.self)
     private var localizationData: LocalizationData
     
+    @State private var isDragging: Bool = false
+    
     var body: some View {
         PreviewImage(previewImage: previewImage)
             .overlay{
@@ -33,17 +35,19 @@ struct DrawBoxView: View {
                         height: abs(currentLocation.y - startLocation.y)
                     )
                     
+                    let sizeMultiplier: CGFloat = proxy.size.width / localizationItem.boundBox.imageWidth
+                    
                     PreviewImage(previewImage: previewImage)
+                        .onAppear{
+                            parseFromSaved()
+                        }
                         .mask{
                             RoundedRectangle(cornerRadius: 5)
-                                .frame(width: rect.width, height: rect.height)
-                                .position(x: rect.midX, y: rect.midY)
+                                .frame(width: rect.width * sizeMultiplier, height: rect.height * sizeMultiplier)
+                                .position(x: rect.midX * sizeMultiplier, y: rect.midY * sizeMultiplier)
                         }
                         .overlay{
                             SelectionBoxDebugInfo(debugEnabled: false, rect: rect)
-                        }
-                        .onAppear{
-                            parseFromSaved()
                         }
                         .onChange(of: localizationKey){
                             parseFromSaved()
@@ -53,6 +57,9 @@ struct DrawBoxView: View {
                             localizationItem.boundBox.width = rect.width
                             localizationItem.boundBox.xPos = rect.minX
                             localizationItem.boundBox.yPos = rect.minY
+                        }
+                        .onChange(of: isDragging){
+                            localizationItem.boundBox.imageWidth = proxy.size.width
                         }
                 }
             }
@@ -73,6 +80,7 @@ struct DrawBoxView: View {
                 if localizationData.selectedPath == .developer{
                     startLocation = gesture.startLocation
                     currentLocation = gesture.location
+                    isDragging.toggle()
                 }
             }
     }

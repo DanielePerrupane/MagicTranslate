@@ -64,4 +64,5 @@ struct BoundBox: Codable {
     var yPos: CGFloat = 0
     var width: CGFloat = 0
     var height: CGFloat = 0
+    var imageWidth: CGFloat = 1
 }
