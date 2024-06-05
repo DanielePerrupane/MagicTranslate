@@ -16,26 +16,30 @@ struct TranslatorsNoteView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        HStack{
+            VStack(alignment: .leading, spacing: 5) {
+                Text("Translator's Notes".uppercased())
+                    .foregroundColor(.white)
+                    .font(.title3)
+                
+                TextField("Enter text here", text: $localizationItem.translated)
+                    .frame(maxWidth: .infinity)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
             
-            Text("Tranlsator's Notes".uppercased())
-                .foregroundColor(.white)
-                .font(.title3)
-                .padding(.top,10)
-                .padding(.horizontal,10)
-            
-            TextField("Enter text here", text: $localizationItem.comment)
-                .padding(.bottom,10)
-                .padding(.horizontal,10)
-                .frame(maxWidth: .infinity)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .disabled(localizationData.selectedPath == .translator ? true : false)
-            
+            Spacer()
         }
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color(red: 0.31, green: 0.31, blue: 0.31)))
-        .padding(10)
+        .padding()
+        .background{
+            Color(red: 0.31, green: 0.31, blue: 0.31)
+                .cornerRadius(10)
+        }
         
     }
+}
+
+#Preview {
+    TranslatorsNoteView(localizationItem: .constant(LocalizationItem()))
+        .environment(LocalizationData())
+        .frame(width: 400, height: 400)
 }
