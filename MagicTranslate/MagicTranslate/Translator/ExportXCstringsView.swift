@@ -49,7 +49,7 @@ struct ExportXCstringsView: View {
         for (key, item) in localizationData.localizationItems {
             let stringUnit = StringUnit(value: item.translated)
             let localization = Localization(stringUnit: stringUnit)
-            let stringData = StringData(localizations: [localizationData.selectedLanguageCode: localization])
+            let stringData = StringData(comment: "Test comment", localizations: [localizationData.selectedLanguageCode: localization])
             exampleLocalizationData.strings.updateValue(stringData, forKey: key)
         }
         

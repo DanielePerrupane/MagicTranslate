@@ -85,16 +85,20 @@ struct ImportXCStringsView: View {
                                         
                                         if let strings = json["strings"] as? [String: Any] {
                                             // Loop through each string in the dictionary
-                                            for (key, _) in strings {
-                                                // Create an empty LocalizationItem object
-                                                let emptyLocalizationItem = LocalizationItem()
-                                                
-                                                // Add the new string to the localizationItems dictionary
-                                                DispatchQueue.main.async {
-                                                    localizationData.localizationItems[key] = emptyLocalizationItem
+                                            for (key, value) in strings {
+                                                // Extract the actual comment from the .xcstrings structure
+                                                if let valueDict = value as? [String: Any],
+                                                   let comment = valueDict["comment"] as? String {
+                                                    // Create a LocalizationItem object with the extracted comment
+                                                    let emptyLocalizationItem = LocalizationItem(comment: comment)
+                                                    
+                                                    // Add the new string to the localizationItems dictionary
+                                                    DispatchQueue.main.async {
+                                                        localizationData.localizationItems[key] = emptyLocalizationItem
+                                                    }
+                                                    
+                                                    localizationData.selectedPath = .developer
                                                 }
-                                                
-                                                localizationData.selectedPath = .developer
                                             }
                                         }
                                     }
