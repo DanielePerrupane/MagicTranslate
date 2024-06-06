@@ -115,11 +115,12 @@ struct SingleImagePreview: View {
                             Image(nsImage: unwrappedImage)
                                 .resizable()
                                 .scaledToFit()
-                                .overlay{
-                                    // Dimming effect
-                                    Color.black
-                                        .opacity(localizationItem.screenshot == convertToPNGData(nsImage: selectedImages[index]) ? 0 : 0.5)
-                                }
+                            // MARK:
+//                                .overlay{
+//                                    // Dimming effect
+//                                    Color.black
+//                                        .opacity(localizationItem.screenshot == convertToPNGData(nsImage: selectedImages[index]) ? 0 : 0.5)
+//                                }
                         }
                     }
             }
