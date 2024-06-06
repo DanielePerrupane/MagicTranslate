@@ -28,7 +28,7 @@ struct ImportXCStringsView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.greenAccept)
                             .font(.system(size: 50))
-                    
+                        
                         Text(".xcstrings imported successfully")
                             .font(.title3)
                     }
@@ -87,11 +87,19 @@ struct ImportXCStringsView: View {
                                             // Loop through each string in the dictionary
                                             for (key, value) in strings {
                                                 // Extract the actual comment from the .xcstrings structure
-                                                if let valueDict = value as? [String: Any],
-                                                   let comment = valueDict["comment"] as? String {
-                                                    // Create a LocalizationItem object with the extracted comment
-                                                    let emptyLocalizationItem = LocalizationItem(comment: comment)
+                                                if let valueDict = value as? [String: Any]{
                                                     
+                                                    var emptyLocalizationItem: LocalizationItem
+                                                    
+                                                    if let comment = valueDict["comment"] as? String {
+                                                        // add with comment
+                                                        emptyLocalizationItem = LocalizationItem(comment: comment)
+                                                    } else{
+                                                        // add without comment
+                                                        emptyLocalizationItem = LocalizationItem()
+                                                    }
+                                                    
+                                                    // append everything
                                                     // Add the new string to the localizationItems dictionary
                                                     DispatchQueue.main.async {
                                                         localizationData.localizationItems[key] = emptyLocalizationItem
