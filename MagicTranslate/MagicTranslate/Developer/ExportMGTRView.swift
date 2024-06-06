@@ -14,24 +14,46 @@ struct ExportMGTRView: View {
     @State private var fileURL: URL?
     
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Text("Export and share .mgtr file with translator")
+                .font(.title2)
+                .fontWeight(.semibold)
             
-            Button(action: {
-                exportMGTR(localizationData) { url in
-                    self.fileURL = url
+            VStack {
+                Button(action: {
+                    exportMGTR(localizationData) { url in
+                        self.fileURL = url
+                    }
+                }) {
+                    Text("Export File")
+                        .padding(.horizontal, 20.0)
+                        .padding(.vertical, 10.0)
+                        .foregroundColor(.white)
+                        .background(
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color(red: 0.31, green: 0.31, blue: 0.31))
+                                .frame(width: 100)
+                        )
                 }
-            }) {
-                Text("Export File")
-            }
-            .padding()
-            
-            if let fileURL = fileURL {
-                ShareLink(item: fileURL, subject: Text("Your file")) {
-                    Text("Share the file")
+                .buttonStyle(PlainButtonStyle())
+                
+                if let fileURL = fileURL {
+                    ShareLink(item: fileURL, subject: Text("Your file")) {
+                        Text("Share File")
+                            .padding(.horizontal, 20.0)
+                            .padding(.vertical, 10.0)
+                            .foregroundColor(.white)
+                            .background(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(Color(red: 0.31, green: 0.31, blue: 0.31))
+                                    .frame(width: 100)
+                            )
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .navigationTitle("Export .mgtr")
     }
 }

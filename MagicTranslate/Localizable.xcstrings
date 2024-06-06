@@ -40,6 +40,9 @@
     "Export" : {
 
     },
+    "Export .mgtr" : {
+
+    },
     "Export and share .mgtr file with translator" : {
 
     },
@@ -77,6 +80,9 @@
 
     },
     "Setup" : {
+
+    },
+    "Share File" : {
 
     },
     "Share the file" : {

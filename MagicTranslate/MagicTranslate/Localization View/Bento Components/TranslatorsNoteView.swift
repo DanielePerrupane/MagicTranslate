@@ -29,7 +29,7 @@ struct TranslatorsNoteView: View {
                 } else{
                     TextField("Enter text here", text: $localizationItem.comment)
                         .frame(maxWidth: .infinity)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .textFieldStyle(CustomTextFieldStyle(backgroundColor: Color.gray.opacity(0.2), textColor: .white, cornerRadius: 8, height: 40))
                 }
             }
             

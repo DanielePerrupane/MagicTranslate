@@ -55,7 +55,7 @@ struct LocalizationView: View {
                             .foregroundColor(.white)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    .background(Color.blue)
+                    .background(Color.pastelBlue)
                     .cornerRadius(3.0)
                 } else{
                     NavigationLink(destination: ExportXCstringsView()) {
@@ -64,7 +64,7 @@ struct LocalizationView: View {
                             .foregroundColor(.white)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    .background(Color.blue)
+                    .background(Color.pastelBlue)
                     .cornerRadius(3.0)
                 }
                 
