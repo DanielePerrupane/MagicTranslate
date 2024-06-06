@@ -37,16 +37,16 @@
     "Enter your project name" : {
 
     },
-    "Export" : {
+    "Export and Share .mgtr" : {
 
     },
-    "Export .mgtr" : {
+    "Export and share .mgtr file with a translator" : {
 
     },
-    "Export and share .mgtr file with translator" : {
+    "Export and Share .xcstrings" : {
 
     },
-    "Export and share .xcstrings file with the developer" : {
+    "Export and share .xcstrings file with a developer" : {
 
     },
     "Export File" : {
@@ -83,9 +83,6 @@
 
     },
     "Share File" : {
-
-    },
-    "Share the file" : {
 
     },
     "Translator" : {

@@ -74,6 +74,6 @@ struct ImportMGTRView: View {
             }
         }
         .frame(minWidth: 200, minHeight: 200)
-        
+        .navigationTitle("Import .mgtr")
     }
 }

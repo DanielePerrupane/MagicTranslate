@@ -15,7 +15,7 @@ struct ExportMGTRView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Export and share .mgtr file with translator")
+            Text("Export and share .mgtr file with a translator")
                 .font(.title2)
                 .fontWeight(.semibold)
             
@@ -54,6 +54,6 @@ struct ExportMGTRView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle("Export .mgtr")
+        .navigationTitle("Export and Share .mgtr")
     }
 }
