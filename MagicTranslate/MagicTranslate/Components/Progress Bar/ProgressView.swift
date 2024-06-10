@@ -37,6 +37,7 @@ struct ProgressView: View {
                     .foregroundColor(.gray)
             }
             .disabled(currentIndex == 0)
+            .help(Text("Go forward"))
             
             //R
             Button(action: {
@@ -49,6 +50,7 @@ struct ProgressView: View {
                     .foregroundColor(.gray)
             }
             .disabled(currentIndex >= localizationData.localizationItems.count - 1)
+            .help(Text("Go backwards"))
         }
         .padding()
         

@@ -13,6 +13,9 @@
     "+" : {
 
     },
+    "Delete image" : {
+
+    },
     "Developer" : {
 
     },
@@ -37,6 +40,9 @@
     "Enter your project name" : {
 
     },
+    "Export .mgtr file" : {
+
+    },
     "Export and Share .mgtr" : {
 
     },
@@ -55,10 +61,22 @@
     "File Content" : {
 
     },
+    "Go backwards" : {
+
+    },
+    "Go forward" : {
+
+    },
     "height: %lld" : {
 
     },
     "Import .mgtr" : {
+
+    },
+    "Import .mgtr file" : {
+
+    },
+    "Import .xcstrings file" : {
 
     },
     "Import an .mgtr file" : {
@@ -71,6 +89,9 @@
 
     },
     "Project Setup" : {
+
+    },
+    "Select image" : {
 
     },
     "Select the language you want to localize to" : {

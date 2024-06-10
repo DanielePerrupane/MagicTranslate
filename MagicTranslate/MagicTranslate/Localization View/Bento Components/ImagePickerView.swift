@@ -128,6 +128,7 @@ struct SingleImagePreview: View {
                     }
             }
             .buttonStyle(PlainButtonStyle())
+            .help(Text("Select image"))
             
             // Delete
             Button(action: {
@@ -148,6 +149,7 @@ struct SingleImagePreview: View {
                     .clipShape(.rect(cornerRadius: 5))
             }
             .buttonStyle(PlainButtonStyle())
+            .help(Text("Delete image"))
             
         }
     }

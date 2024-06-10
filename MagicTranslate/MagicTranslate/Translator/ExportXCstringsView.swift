@@ -45,6 +45,7 @@ struct ExportXCstringsView: View {
                         )
                 }
                 .buttonStyle(PlainButtonStyle())
+                .help(Text("Import .xcstrings file"))
                 
                 if let fileURL = fileURL {
                     ShareLink(item: fileURL, subject: Text("Your file")) {

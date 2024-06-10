@@ -70,6 +70,8 @@ struct ImportMGTRView: View {
                             )
                     }
                     .buttonStyle(PlainButtonStyle())
+                    .help(Text("Import .mgtr file"))
+                    
                 }
             }
         }

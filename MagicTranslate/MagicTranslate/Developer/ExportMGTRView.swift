@@ -36,6 +36,7 @@ struct ExportMGTRView: View {
                         )
                 }
                 .buttonStyle(PlainButtonStyle())
+                .help(Text("Export .mgtr file"))
                 
                 if let fileURL = fileURL {
                     ShareLink(item: fileURL, subject: Text("Your file")) {
