@@ -2,6 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<integer>1</integer>
+			<key>CFBundleTypeName</key>
+			<string>mgtr</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>dev.novoselov.mgtr</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>NSDocument</string>
+		</dict>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict/>
@@ -24,7 +43,14 @@
 			<key>UTTypeDescription</key>
 			<string>Magic Translate File</string>
 			<key>UTTypeIcons</key>
-			<dict/>
+			<dict>
+				<key>UTTypeIconBackgroundName</key>
+				<string>IconBackground</string>
+				<key>UTTypeIconBadgeName</key>
+				<string>IconCentered</string>
+				<key>UTTypeIconText</key>
+				<string>mgtr</string>
+			</dict>
 			<key>UTTypeIdentifier</key>
 			<string>dev.novoselov.mgtr</string>
 			<key>UTTypeTagSpecification</key>
