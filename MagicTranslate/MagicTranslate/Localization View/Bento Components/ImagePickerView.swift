@@ -12,6 +12,7 @@ struct ImagePickerView: View {
     @Binding var selectedImages: [NSImage]
     @Binding var localizationItem: LocalizationItem
     var localizationKey: String
+    @State private var selectedIndex: Int?
     
     // Adapt to different screen sizes
     // Fill remaining space even if column rows are specified as two
@@ -41,7 +42,7 @@ struct ImagePickerView: View {
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(selectedImages.indices, id: \.self) { index in
-                            SingleImagePreview(selectedImages: $selectedImages, localizationItem: $localizationItem, localizationKey: localizationKey, index: index)
+                            SingleImagePreview(selectedImages: $selectedImages, localizationItem: $localizationItem, localizationKey: localizationKey, selectedImage: selectedImages[index], selectedIndex: $selectedIndex, index: index)
                         }
                     }
                     .padding(10)
@@ -94,6 +95,8 @@ struct SingleImagePreview: View {
     @Binding var selectedImages: [NSImage]
     @Binding var localizationItem: LocalizationItem
     var localizationKey: String
+    var selectedImage: NSImage
+    @Binding var selectedIndex: Int?
     var index: Int
     
     var body: some View {
@@ -102,25 +105,25 @@ struct SingleImagePreview: View {
             // Add
             Button(action: {
                 withAnimation {
-                    localizationItem.screenshot = convertToPNGData(nsImage: selectedImages[index])
+                    localizationItem.screenshot = convertToPNGData(nsImage: selectedImage)
+                    selectedIndex = index
                 }
             }) {
                 Rectangle()
                     .aspectRatio(1, contentMode: .fit)
                     .foregroundStyle(.clear)
                     .overlay{
-                        if selectedImages.indices.contains(index) {
-                            let unwrappedImage = selectedImages[index]
+                        if selectedImages.contains(selectedImage) {
                             // Use unwrappedImage safely here
-                            Image(nsImage: unwrappedImage)
+                            Image(nsImage: selectedImage)
                                 .resizable()
                                 .scaledToFit()
                             // MARK:
-//                                .overlay{
-//                                    // Dimming effect
-//                                    Color.black
-//                                        .opacity(localizationItem.screenshot == convertToPNGData(nsImage: selectedImages[index]) ? 0 : 0.5)
-//                                }
+                                .overlay{
+                                    // Dimming effect
+                                    Color.black
+                                        .opacity((index == selectedIndex) ? 0 : 0.5)
+                                }
                         }
                     }
             }
@@ -129,8 +132,8 @@ struct SingleImagePreview: View {
             // Delete
             Button(action: {
                 withAnimation {
-                    if selectedImages.indices.contains(index) {
-                        if localizationItem.screenshot == convertToPNGData(nsImage: selectedImages[index]){
+                    if selectedImages.contains(selectedImage) {
+                        if localizationItem.screenshot == convertToPNGData(nsImage: selectedImage){
                             localizationItem.screenshot = nil
                         }
                         
