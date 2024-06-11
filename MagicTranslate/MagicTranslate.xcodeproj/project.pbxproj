@@ -32,7 +32,6 @@
 		E72EA9442BF7690200BF8D76 /* LanguagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EA9432BF7690200BF8D76 /* LanguagePickerView.swift */; };
 		E72EA9482BFB437700BF8D76 /* EnterProjectNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EA9472BFB437700BF8D76 /* EnterProjectNameView.swift */; };
 		E72EA94A2BFC894B00BF8D76 /* LocalizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EA9492BFC894B00BF8D76 /* LocalizationView.swift */; };
-		E751894C2BF378AC00ABD7BB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E751894B2BF378AC00ABD7BB /* Localizable.xcstrings */; };
 		E7B835352BF23B1000615BA4 /* MagicTranslateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */; };
 		E7B835392BF23B1200615BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B835382BF23B1200615BA4 /* Assets.xcassets */; };
 		E7B8354C2BF372DC00615BA4 /* ImportXCStringsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8354B2BF372DC00615BA4 /* ImportXCStringsView.swift */; };
@@ -64,7 +63,6 @@
 		E72EA9432BF7690200BF8D76 /* LanguagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagePickerView.swift; sourceTree = "<group>"; };
 		E72EA9472BFB437700BF8D76 /* EnterProjectNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterProjectNameView.swift; sourceTree = "<group>"; };
 		E72EA9492BFC894B00BF8D76 /* LocalizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationView.swift; sourceTree = "<group>"; };
-		E751894B2BF378AC00ABD7BB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E751894D2BF3CADE00ABD7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E7B835312BF23B1000615BA4 /* MagicTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicTranslateApp.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		E7B835282BF23B1000615BA4 = {
 			isa = PBXGroup;
 			children = (
-				E751894B2BF378AC00ABD7BB /* Localizable.xcstrings */,
 				E7B835342BF23B1000615BA4 /* MagicTranslateApp.swift */,
 				E7B835332BF23B1000615BA4 /* MagicTranslate */,
 				E7B835322BF23B1000615BA4 /* Products */,
@@ -279,7 +276,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E751894C2BF378AC00ABD7BB /* Localizable.xcstrings in Resources */,
 				E7B835392BF23B1200615BA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
