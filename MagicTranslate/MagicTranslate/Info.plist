@@ -37,7 +37,9 @@
 	<array>
 		<dict>
 			<key>UTTypeConformsTo</key>
-			<array/>
+			<array>
+				<string>public.json</string>
+			</array>
 			<key>UTTypeDescription</key>
 			<string>Magic Translate File</string>
 			<key>UTTypeIcons</key>
@@ -58,7 +60,9 @@
 					<string>mgtr</string>
 				</array>
 				<key>public.mime-type</key>
-				<array/>
+				<array>
+					<string>application/json</string>
+				</array>
 			</dict>
 		</dict>
 	</array>
