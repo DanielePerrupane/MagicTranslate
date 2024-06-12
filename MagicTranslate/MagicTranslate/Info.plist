@@ -10,12 +10,12 @@
 			<key>CFBundleTypeName</key>
 			<string>mgtr</string>
 			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
+			<string>Viewer</string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>dev.novoselov.mgtr</string>
+				<string>dev.novoselov.MagicTranslate.mgtr</string>
 			</array>
 			<key>NSDocumentClass</key>
 			<string>NSDocument</string>
@@ -52,7 +52,7 @@
 				<string>mgtr</string>
 			</dict>
 			<key>UTTypeIdentifier</key>
-			<string>dev.novoselov.mgtr</string>
+			<string>dev.novoselov.MagicTranslate.mgtr</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

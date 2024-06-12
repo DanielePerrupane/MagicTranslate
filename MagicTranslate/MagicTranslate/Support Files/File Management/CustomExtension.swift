@@ -9,7 +9,7 @@ import UniformTypeIdentifiers
 
 extension UTType {
     static var magicTranslate: UTType {
-        UTType(exportedAs: "dev.novoselov.mgtr")
+        UTType(exportedAs: "dev.novoselov.MagicTranslate.mgtr")
     }
 }
 
