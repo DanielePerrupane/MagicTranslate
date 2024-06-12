@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/matt-novoselov/matt-novoselov/blob/58a1be3d03d2558b81e787a0a13927faf3465be2/Files/Images/iOS_icon_placeholder.png" alt="Logo" width="80" height="80">
+  <img src="https://github.com/DanielePerrupane/MagicTranslate/blob/dc313821a67c8d7b8fc665f455f0995f889c467d/Media/AppIcon.png" alt="Logo" width="80" height="80">
   <h2 align="center">
     Magic Translate
   </h2>
