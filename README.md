@@ -5,7 +5,7 @@
   </h2>
 </p>
 
-<img src="https://github.com/matt-novoselov/matt-novoselov/blob/58a1be3d03d2558b81e787a0a13927faf3465be2/Files/SVGs/Badges/Frameworks/SwiftUI.svg" alt="" style="height: 30px"> 
+<img src="https://github.com/matt-novoselov/matt-novoselov/blob/6e104542a76c201ad4f806319290b7c4fd14719a/Files/SVGs/Badges/Platforms/macOS14.svg" alt="" style="height: 30px"> <img src="https://github.com/matt-novoselov/matt-novoselov/blob/58a1be3d03d2558b81e787a0a13927faf3465be2/Files/SVGs/Badges/Frameworks/SwiftUI.svg" alt="" style="height: 30px">  <img src="https://github.com/matt-novoselov/matt-novoselov/blob/6e104542a76c201ad4f806319290b7c4fd14719a/Files/SVGs/Badges/Frameworks/AppKit.svg" alt="" style="height: 30px"> 
 
 
 App Description
