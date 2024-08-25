@@ -8,25 +8,21 @@
 <img src="https://github.com/matt-novoselov/matt-novoselov/blob/6e104542a76c201ad4f806319290b7c4fd14719a/Files/SVGs/Badges/Platforms/macOS14.svg" alt="" style="height: 30px"> <img src="https://github.com/matt-novoselov/matt-novoselov/blob/58a1be3d03d2558b81e787a0a13927faf3465be2/Files/SVGs/Badges/Frameworks/SwiftUI.svg" alt="" style="height: 30px">  <img src="https://github.com/matt-novoselov/matt-novoselov/blob/6e104542a76c201ad4f806319290b7c4fd14719a/Files/SVGs/Badges/Frameworks/AppKit.svg" alt="" style="height: 30px"> 
 
 
-App Description
+Enhance your iOS app localization with Magic Translate, the essential macOS application designed for both developers and translators. Create a seamless multilingual experience by connecting development and translation efforts effectively.
 
-<a href="https://example.com" target="_blank">
-  <img src="https://i.ibb.co/3h3kWh9/image-processing20210830-21891-1313qn-ezgif-com-resize.gif" alt="GIF">
-</a>
+<img src="https://github.com/DanielePerrupane/MagicTranslate/blob/35aeeff32e491411dc1a5e7931f05bc8d34e49dd/Media/Thumbnail.png" alt="Thumbnail">
 
-[![](https://github.com/matt-novoselov/matt-novoselov/blob/34555effedede5dd5aa24ae675218d989e976cf6/Files/YouTube_Badge.svg)](https://example.com)
 [![](https://github.com/matt-novoselov/matt-novoselov/blob/58a1be3d03d2558b81e787a0a13927faf3465be2/Files/SVGs/Available%20On/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg)](https://apps.apple.com/app/magictranslate-localization/id6503010479)
-
 
 
 ## Features
 
-### Feature
-Mollit minim sint nostrud minim minim non occaecat ea aliquip quis magna ea. Voluptate velit commodo ullamco commodo qui cillum commodo cupidatat in aliquip mollit incididunt dolore laboris laboris anim.
+### Screenshot Support
+Improve translation accuracy by incorporating reference screenshots directly within the app. This feature allows translators to better understand the context, resulting in precise translations.
 
-<br>
+### Custom File Format
+Utilize our unique file format designed for easy access and management of localization data. Streamline your workflow for better efficiency.
 
-The app incorporates accessibility features to assist our users, including support for VoiceOver.
 
 ## Requirements
 - macOS 14.0+
